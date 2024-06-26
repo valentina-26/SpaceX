@@ -9,173 +9,209 @@
     <script type="module" src="js/main.js" defer></script>
 </head>
 <body>
-    <header class="header">
-        <div id="header__title" class="header__title">
-            <div class="load"></div>
-        </div>
-    </header>
-    <main class="main">
-        <nav class="nav__description">
-            <div id="description__item" class="description__item">
-                <div class="load"></div>
-                <div class="load"></div>
-                <div class="load"></div>
-                <div class="load"></div>
-                <div class="load"></div>
+    <main class="container">
+        <section class="left-panel">
+            <div class="system-check">ALL SYSTEMS CHECK</div>
+            <div class="status normal">Normal</div>
+            <div class="system-check">RENDEZVOUS BURN SLOW</div>
+            <div class="status normal">Normal</div>
+            <div class="system-check">PREPARE RENDEZVOUS BURN</div>
+            <div class="status normal">Normal</div>
+            <div class="system-check">THERMAL SHIELD</div>
+            <div class="status applied">Applied</div>
+            <div class="system-check">BURN GO/NO-GO</div>
+            <div class="status normal">Normal</div>
+            <div class="system-check">POWER COMPLETION</div>
+            <div class="status awaiting">Awaiting</div>
+            <div class="system-check">STATION DECK CHECK</div>
+            <div class="status normal">Normal</div>
+            <div class="gauge">
+                <div class="gauge__body">
+                    <div class="gauge__fill"></div>
+                    <div class="gauge__cover">
+                        <div class="gauge__text">LOOP A</div>
+                        <div class="gauge__value">26.53°C</div>
+                    </div>
+                </div>
             </div>
-            <div class="description__buttom">
-                <!-- <a href="#">a</a>
-                <a href="#">b</a> -->
-            </div>
-        </nav>
-        <section class="main__section">
-            <article id="section__information__1" class="section__information__1">
-                <div class="load" style="height: 150px;"></div>
-            </article>
-            <article class="section__information__container">
-                <div class="section__information__2">
-                    <div>
-                        <div class="load" style="height: 150px;"></div>
-                    </div>
-                    <div id="information__table__1" class="information__table__1">
-                        <div class="load" style="height: 160px;"></div>
-                    </div>
-                </div>
-                <div id="section__image" class="section__image">
-                    <div class="load" style="height: 350px"></div>
-                </div>
-                <div class="section__information__3">
-                    <div>
-                        <div class="load" style="height: 150px;"></div>
-                    </div>
-                    <div id="information__table__2" class="information__table__2">
-                        <div class="load" style="height: 160px;"></div>
-                    </div>
-                </div>
-            </article>
-            <footer class="footer">
-                <ul>
-                    <li id="rocket">
-                        <a class="select" href="#">
-                            <img src="storage/img/rocket.svg">
-                            <span>Rockets</span>
-                        </a>
-                    </li>
-                    <li id="capsules">
-                        <a href="#">
-                            <img src="/storage/img/capsule.png">
-                            <span>Capsules</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.example.com">
-                            <span>company</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.example.com">
-                            <span>cores</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.example.com">
-                            <span>crew</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.example.com">
-                            <span>dragons</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.example.com">
-                            <span>history</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.example.com">
-                            <span>landpads</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.example.com">
-                            <span>launches</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.example.com">
-                            <span>lauchpads</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.example.com">
-                            <span>payloads</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.example.com">
-                            <span>roadster</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.example.com">
-                            <span>launches</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.example.com">
-                            <span>ships</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="http://www.example.com">
-                            <span>starlink</span>
-                        </a>
-                    </li>
-                </ul>
-            </footer>
         </section>
-        <nav class="nav__information">
-            <div id="information__2" class="information__item">
-                <div class="load"></div>
-                <div class="load"></div>
-                <div class="load"></div>
-                <div class="load"></div>
-                <div class="load"></div>
+        <section class="center-panel">
+            <h1 class="title">VEHICLE OVERVIEW</h1>
+            <div class="metrics">
+                  
+                    
+               
+                <div class="metric">
+                    <div class="metric-title">CABIN PRESSURE</div>
+                    <div class="metric-value">14.00 psia</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-title">CO2</div>
+                    <div class="metric-value">0.07 mmHg</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-title">LOOP A</div>
+                    <div class="metric-value">26.53 °C</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-title">LOOP B</div>
+                    <div class="metric-value">20.00 °C</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-title">NET PWR 1</div>
+                    <div class="metric-value">0.00 W</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-title">NET PWR 2</div>
+                    <div class="metric-value">0.00 W</div>
+                </div>
             </div>
-            <div id="paginacion" class="information__buttom"></div>
-        </nav>
+            <div class="rocket-image">
+                <img src="/storage/img/prueba.avif" alt="Rocket Image" >
+            </div>
+        </section>
+        <section class="right-panel">
+            <div class="right-metric">
+                <div class="right-title">Inertial Velocity</div>
+                <div class="right-bar">
+                    <div class="right-fill" style="width: 76%;"></div>
+                </div>
+                <div class="right-value">7.68 km/s</div>
+            </div>
+            <div class="right-metric">
+                <div class="right-title">Altitude</div>
+                <div class="right-bar">
+                    <div class="right-fill" style="width: 50%;"></div>
+                </div>
+                <div class="right-value">390.0 km</div>
+            </div>
+            <div class="right-metric">
+                <div class="right-title">Apogee</div>
+                <div class="right-bar">
+                    <div class="right-fill" style="width: 52%;"></div>
+                </div>
+                <div class="right-value">404.4 km</div>
+            </div>
+            <div class="right-metric">
+                <div class="right-title">Perigee</div>
+                <div class="right-bar">
+                    <div class="right-fill" style="width: 49%;"></div>
+                </div>
+                <div class="right-value">389.4 km</div>
+            </div>
+            <div class="right-metric">
+                <div class="right-title">Inclination</div>
+                <div class="right-bar">
+                    <div class="right-fill" style="width: 30%;"></div>
+                </div>
+                <div class="right-value">51.67°</div>
+            </div>
+            <div class="right-metric">
+                <div class="right-title">Range to ISS</div>
+                <div class="right-bar">
+                    <div class="right-fill" style="width: 10%;"></div>
+                </div>
+                <div class="right-value">0.02 km</div>
+            </div>
+            <div class="gauge">
+                <div class="gauge__body">
+                    <div class="gauge__fill"></div>
+                    <div class="gauge__cover">
+                        <div class="gauge__text">LOOP A</div>
+                        <div class="gauge__value">26.53°C</div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-
-    
-    <!-- Check icons -->
-    <!-- <i class='bx bxs-check-circle' style='color:#9499c3'  ></i>
-    <i class='bx bxs-check-circle' style='color:#40c110'  ></i>
-    <i class='bx bxs-check-circle' style='color:#ea7b15'  ></i> -->
-
-    <!-- Nav icons -->
-    <!-- <img src="storage/img/icons/rocket.svg">
-    <i class='bx bx-body' style='color:#e72d2d'></i>
-    <img src="storage/img/icons/comms.svg">
-    <img src="storage/img/icons/prop.svg">
-    <img src="storage/img/icons/mech.svg">
-    <i class='bx bxs-battery-charging bx-rotate-270' style='color:#ffffff'  ></i>
-    <i class='bx bxs-chip' style='color:#ffffff'  ></i>
-    <i class='bx bx-current-location bx-rotate-270' style='color:#ffffff'  ></i>
-    <i class='bx bxs-brightness-half' style="color: #fff"></i>  -->
+    <footer class="footer">
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="storage/img/starlink}.png">
+                    <span>Starlink</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/storage/img/capsule.png">
+                    <span>Capsules</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/storage/img/company.png">
+                    <span>Company</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/storage/img/cores.png">
+                    <span>Cores</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/storage/img/ship.png">
+                    <span>Ships</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/storage/img/payloads.png">
+                    <span>Payloads</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/storage/img/rocket.svg">
+                    <span>Rockets</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/storage/img/roadsters.png">
+                    <span>Roadster</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/storage/img/crew.png">
+                    <span>Crew</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/storage/img/dragon.svg">
+                    <span>Dragon</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/storage/img/history.png">
+                    <span>History</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/storage/img/launchepads.png">
+                    <span>LaunchPads</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/storage/img/launchepads.png">
+                    <span>LandingPads</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/storage/img/launches.png">
+                    <span>Launches</span>
+                </a>
+            </li>
+        </ul>
+    </footer>
     
 </body>
 </html>
