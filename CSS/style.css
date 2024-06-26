@@ -3,20 +3,24 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(180deg, #060a20 0%, #232644 100%); /* Degradado vertical de azul oscuro a un tono ligeramente más claro */
     margin: 0;
-    font-family: Arial, sans-serif;
-    color: #d9d9e0; /* Color del texto similar al de la imagen */
+    color: #ffffff; 
+    background-image: url('../storage/img/img3.webp'); /* Añadir la ruta de tu imagen aquí */
+    background-size: cover; /*  */
+    background-repeat: no-repeat; */
+    background-position:center
 }
 
 
+
+
 main {
-    position: fixed; /* Fija el elemento en la ventana del navegador */
-    top: 10; /* Fija la posición desde la parte superior de la ventana */
-    left: 35; /* Fija la posición desde el borde izquierdo de la ventana */
-    width: 100%; /* Ocupa el ancho completo de la ventana */
-    height: 100%; /* Ocupa la altura completa de la ventana */
-    overflow: auto; /* Habilita el desplazamiento si el contenido es más grande que la ventana */
+    position: fixed; 
+    top: 10; 
+    left: 35; 
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
   }
   
 
@@ -59,19 +63,19 @@ main {
 }
 
 .status.normal {
-    color: #00ff00;
+    color: #dd2525;
 }
 
 .status.applied {
-    color: #ffcc00;
+    color: #dd2525;
 }
 
 .status.awaiting {
-    color: #ff6600;
+    color: #dd2525;
 }
 
 .status.connected {
-    color: #00aaff;
+    color: #dd2525;
 }
 
 .connections {
@@ -100,6 +104,16 @@ main {
     border-radius: 60px;
 
     
+}
+
+.otro{
+    width: 200px;
+    height: 200px;
+    background-color: #1a1c3a;
+    display: flex;justify-content: center;
+    align-items: center;
+    border-radius: 60px;
+    margin-left: 35px;
 }
 
 
@@ -210,15 +224,20 @@ main {
 }
 
 .footer {
-    background: #1a1a2e; /* Color de fondo */
+    background-color: #16172c;
     padding: 20px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 80vh;
-    
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
 }
+
+
 
 .footer ul {
     list-style-type: none;
