@@ -273,3 +273,7 @@ main {
 .footer img:hover {
     color: #FF4500; /* Cambia el color del texto al pasar el ratón */
 }
+
+.informationbuttom{
+    background-color: #44757c;
+}

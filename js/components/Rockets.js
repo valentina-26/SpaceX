@@ -1,3 +1,5 @@
+import{NameRocket} from "../modules/data"
+
 export const NameRocket = async (name) => {
     document.querySelector("#title").innerHTML = name;
 }

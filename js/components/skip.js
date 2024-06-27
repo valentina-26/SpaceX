@@ -14,16 +14,17 @@ export const paginationRockets = async () => {
 export const setupPagination = () => {
     document.querySelector("#paginacion").addEventListener("click", async (e) => {
         e.preventDefault();
+        
         const id = e.target.dataset.id;
 
-        // Rockets
+        
         const rocketName = await NameRocket(id)
-        // const rocketDescription = await getRocketDescriptionById(id);
-        const rocketMoreInfo = await getRocketMoreInfoById(id);
+        
+        const rocketMoreInfo = await DescriptionRocket(id);
         console.log(rocketMoreInfo);
 
         await nameRocket(rocketName);
-        // await descriptionRocket(rocketDescription);
+        
         await moreInfoRocket(rocketMoreInfo);
     });
 }

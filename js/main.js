@@ -1,33 +1,10 @@
-import {IdRocket,NameRocket,DescriptionRocket,HeightRocket,DiameterRocket,CostRocket,fisrtStage,SecondStage} from "./modules/data.js"
+import {IdRocket,IDcapsule,NameRocket,DescriptionRocket,HeightRocket,DiameterRocket,CostRocket,fisrtStage,SecondStage} from "./modules/data.js"
 
 
 addEventListener("DOMContentLoaded", async (e) => {
-    let RocketID =  await IdRocket()
-    console.log(RocketID);
-
-    let Rocketname =  await NameRocket()
-    console.log(Rocketname);
+    document.querySelector("#paginacion").innerHTML = await paginationRockets();    
     
-    let Rocketdescript =  await DescriptionRocket()
-    console.log(Rocketdescript);
-
-    let Rocketheight =  await HeightRocket()
-    console.log(Rocketheight);
-
-    let Rocketdiameter =  await DiameterRocket()
-    console.log(Rocketdiameter);
-
-    let Rockecost =  await CostRocket()
-    console.log(Rockecost);
-
-    let RocketFirstSt =  await fisrtStage()
-    console.log(RocketFirstSt);
-
-    let RocketSecondSt =  await SecondStage()
-    console.log(RocketSecondSt);
-
-
-    
+    setupPagination();
 })
 
 
