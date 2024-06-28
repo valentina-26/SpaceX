@@ -53,7 +53,7 @@ export const getRocketMoreInfoById = async (id) => {
                 "_id": id
             },
             "options": {
-            "select": "type cost_per_launch country wikipedia description first_flight  height.meters height.feet diameter.meters diameter.feet stages id"
+            "select": "type cost_per_launch country wikipedia description first_flight  height.meters height.feet diameter.meters diameter.feet stages id engines.isp.sea_level engines.thrust_sea_level.kN engines.number engines.type engines.version engines.layout ingines.propellant_1 ingines.thrust_to_weight "
             }
         })
     };
@@ -63,6 +63,7 @@ export const getRocketMoreInfoById = async (id) => {
     console.log(docs);
     return docs[0];
 }
+
 
 export const IMG = async (id) => {
     const config = {

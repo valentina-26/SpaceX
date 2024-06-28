@@ -7,8 +7,8 @@ body {
     color: #ffffff; 
     background-image: url('../storage/img/img3.webp'); /* Añadir la ruta de tu imagen aquí */
     background-size: cover; /*  */
-    background-repeat: no-repeat; */
-    background-position:center
+    background-repeat: no-repeat;
+    background-position:center;
 }
 
 
@@ -22,7 +22,11 @@ main {
     height: 100%;
     overflow: auto; 
   }
-  
+
+
+.title{
+    font-size:5rem;
+}
 
 .container {
     display: flex;
@@ -84,21 +88,26 @@ main {
 }
 
 .rocket-image {
-    width: 100%;
-    height: 50vh;
-    overflow: hidden;
-    position: relative; /* Necesario para alinear correctamente las imágenes */
+    margin-left: 30%;
+    display: flex;
+    width: 400px;
+    height: 300px;
+    overflow-x: auto; /* Usamos 'auto' en lugar de 'scroll' para mostrar el scroll solo cuando sea necesario */
+    /* background-color: #00aaff; */
+    gap: 20px;
+    white-space: nowrap; /* Evita que las imágenes se dividan en varias líneas */
 }
 
 .carousel {
-    white-space: nowrap; /* Asegura que las imágenes estén una al lado de la otra */
+    display: flex;
     transition: transform 0.3s ease; /* Añade una transición suave al cambiar de imagen */
 }
 
 .carousel img {
-    width: 100%;
-    height: 100%;
-    display: inline-block; /* Alinea las imágenes una al lado de la otra */
+    width: 400px; /* Ancho del contenedor principal */
+    height: auto; /* Para mantener la proporción de la imagen */
+    flex: 0 0 auto; /* Fuerza a las imágenes a tener su tamaño original */
+    margin-right: 20px; /* Espacio entre cada imagen */
 }
 
 
@@ -121,11 +130,12 @@ main {
 .otro{
     width: 200px;
     height: 200px;
-    background-color: #1a1c3a;
+    background-color: #1a1c3a57;
     display: flex;justify-content: center;
     align-items: center;
     border-radius: 60px;
     margin-left: 35px;
+    border-style:groove;
 }
 
 
@@ -178,10 +188,10 @@ main {
     width: 22%;
     margin: 10px;
     padding: 20px;
-    background-color: #1a1c3a;
+    background-color: #1a1c3a7c;
     border-radius: 10px;
     text-align: center;
-    border-style: dashed;
+    border-style:groove;
 }
 
 .metric-title {
@@ -192,20 +202,40 @@ main {
 .metric-value {
     font-size: 1.2em;
     margin-top: 10px;
+
+}
+
+.rocket-image{
+    display: flex;
+    overflow-x: scroll;
+    margin-top:10%
+
+}
+.carousel{
+    /* background: #dd2525; */
+    width: 200px;
+    height: 100%;
+    min-width: 100%;
 }
 
 .rocket-image img {
-    width: 100px;
-    margin-top: 20px;
+    width: 100%;
+    
 }
 
 .right-metric {
     margin-bottom: 20px;
+    background-color: #16172c5e;
+    height:60px ;
+    padding: 20px;
+    border-radius: 20%;
+    border-style:groove;
 }
 
 .right-title {
     font-size: 1em;
     margin-bottom: 5px;
+    text-align: center;
 }
 
 .right-bar {
@@ -220,7 +250,7 @@ main {
 
 .right-fill {
     height: 100%;
-    background-color: #00aaff;
+    background-color:  #dd2525;
     border-radius: 4px 0 0 4px;
     position: absolute;
     top: 0;
@@ -229,6 +259,7 @@ main {
 
 .right-value {
     font-size: 1.2em;
+    text-align: center;
 }
 
 .content {
@@ -296,44 +327,43 @@ main {
 .informationbuttom{
     z-index: 10;
     position: fixed;
-    bottom: 150px;
-    right: 250px;
-    background-color: #16172c;
+    bottom: 65px;
+    right: 150px;
+    background-color: #16172c85;
     padding: 20px;
-    border-style:dashed;
+    border-style:groove;
+    display: flex;
+    gap: 15px;
 }
 
 .informationbuttom a {
     display: flex;
     color: #ffffff;
-    justify-content: space-between;
-    flex-direction: row;
-    gap: 100px;
-    
 }
 
 .left-rocket{
     width: 60%;
-    background-color: #1a1c3a;f;
+    background-color: #1a1c3a6e;
     padding: 10px;
     border-radius: 20px;
     margin-bottom: 15px;
-    border-style: dashed;
+    border-style: groove;
 }
 
 .left-circle{
     width: 40%;
     height: 60px;
-    background-color: #1a1c3a;f;
+    background-color: #1a1c3a62;
     padding: 20px;
     border-radius: 50px;
     margin-bottom: 15px;
-    border-style: dashed;
+    border-style: groove;
+    margin-bottom: 25px;
 
 }
 
 .left-circle-titlt{
-    text-align: center;
+    text-align: groove;
 
 }
 
@@ -342,11 +372,11 @@ main {
 .WIKIPEDIA{
     width: 95%;
     height: 80px;
-    background-color: #1a1c3a;f;
+    background-color: #1a1c3a71;
     padding: 10px;
     border-radius: 50px;
     margin-bottom: 15px;
-    border-style: dashed;
+    border-style: groove;
 }
 
 .wikitext{
@@ -365,13 +395,32 @@ main {
 .right-circle{
     width: 40%;
     height: 60px;
-    background-color: #1a1c3a;f;
+    background-color: #1a1c3a7e;
     padding: 10px;
     border-radius: 50px;
     margin-bottom: 15px;
-    border-style: dashed;
+    border-style: groove;
 }
 
 .imagen img{
     width: 10px;
+}
+
+
+.engines{
+    background-color: #1a1c3a70;
+    text-align: center;
+    padding: 8px;
+    border-style:groove;
+    margin-bottom: 25px;
+}
+
+.informacion{
+    display: flex;
+    justify-content: space-between;
+}
+.elongif1{
+    width: 250px;
+    border-radius: 20%;
+    margin-bottom:25px
 }
