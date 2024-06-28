@@ -64,6 +64,7 @@ main {
 
 .status.normal {
     color: #dd2525;
+    text-align: center;
 }
 
 .status.applied {
@@ -84,16 +85,23 @@ main {
 
 .rocket-image {
     width: 100%;
-    height: 40vh; /* Asegura que el contenedor tenga la altura deseada */
-    overflow: hidden; /* Esconde cualquier parte de la imagen que se salga del contenedor */
-    /* background-color: lightblue; Color de fondo para visualizar el contenedor */
+    height: 50vh;
+    overflow: hidden;
+    position: relative; /* Necesario para alinear correctamente las imágenes */
 }
 
-.rocket-image img {
-    width: 150%;
-    height: 100%;
-    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor manteniendo su proporción */
+.carousel {
+    white-space: nowrap; /* Asegura que las imágenes estén una al lado de la otra */
+    transition: transform 0.3s ease; /* Añade una transición suave al cambiar de imagen */
 }
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    display: inline-block; /* Alinea las imágenes una al lado de la otra */
+}
+
+
 
 .gauge {
     width: 200px;
@@ -104,6 +112,10 @@ main {
     border-radius: 60px;
 
     
+}
+
+.title{
+    font-size: 2rem;
 }
 
 .otro{
@@ -133,7 +145,7 @@ main {
 .gauge__fill {
     width: 80%;
     height: 80%;
-    background: #0a0e27;
+    background:#0a0e27;
     border-radius: 50%;
     position: absolute;
 }
@@ -154,6 +166,7 @@ main {
 .gauge__text {
     font-size: 1em;
     margin-bottom: 0.5em;
+    color: #dd2525;
 }
 
 .gauge__value {
@@ -168,10 +181,12 @@ main {
     background-color: #1a1c3a;
     border-radius: 10px;
     text-align: center;
+    border-style: dashed;
 }
 
 .metric-title {
     font-size: 1em;
+    color:#dd2525;
 }
 
 .metric-value {
@@ -283,13 +298,80 @@ main {
     position: fixed;
     bottom: 150px;
     right: 250px;
-    gap: 15px;
     background-color: #16172c;
     padding: 20px;
+    border-style:dashed;
 }
 
 .informationbuttom a {
+    display: flex;
     color: #ffffff;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 100px;
     
 }
 
+.left-rocket{
+    width: 60%;
+    background-color: #1a1c3a;f;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    border-style: dashed;
+}
+
+.left-circle{
+    width: 40%;
+    height: 60px;
+    background-color: #1a1c3a;f;
+    padding: 20px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+    border-style: dashed;
+
+}
+
+.left-circle-titlt{
+    text-align: center;
+
+}
+
+
+
+.WIKIPEDIA{
+    width: 95%;
+    height: 80px;
+    background-color: #1a1c3a;f;
+    padding: 10px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+    border-style: dashed;
+}
+
+.wikitext{
+    margin-top: 11px;
+    font-size: 1rem;
+    text-align: center;
+  
+}
+
+
+.wikititle{
+    color: #dd2525;
+    text-align: center;
+}
+
+.right-circle{
+    width: 40%;
+    height: 60px;
+    background-color: #1a1c3a;f;
+    padding: 10px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+    border-style: dashed;
+}
+
+.imagen img{
+    width: 10px;
+}
