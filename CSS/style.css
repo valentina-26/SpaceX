@@ -48,7 +48,7 @@ main {
 }
 
 .title {
-    font-size: 2em;
+    font-size: 4em;
     margin-bottom: 20px;
 }
 
@@ -115,6 +115,7 @@ main {
     border-radius: 60px;
     margin-left: 35px;
 }
+
 
 
 
@@ -235,6 +236,8 @@ main {
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
+    margin-left: 180px;
+    
 }
 
 
@@ -274,6 +277,19 @@ main {
     color: #FF4500; /* Cambia el color del texto al pasar el ratón */
 }
 
+
 .informationbuttom{
-    background-color: #44757c;
+    z-index: 10;
+    position: fixed;
+    bottom: 150px;
+    right: 250px;
+    gap: 15px;
+    background-color: #16172c;
+    padding: 20px;
 }
+
+.informationbuttom a {
+    color: #ffffff;
+    
+}
+

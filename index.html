@@ -7,18 +7,16 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="CSS/style.css">
     <script type="module" src="js/main.js" defer></script>
-</head>
 <body>
-    <main class="container">
-        <section class="left-panel">
-            <div id = "description" class="system-check">ALL SYSTEMS CHECK</div>
-            <div class="status normal">Normal</div>
+<main class="container">
+        <section id ="izquierda" class="left-panel">
+            <!-- <div class="status normal">Normal</div>
             <div class="system-check">RENDEZVOUS BURN SLOW</div>
             <div class="status normal">Normal</div>
             <div class="system-check">PREPARE RENDEZVOUS BURN</div>
             <div class="status normal">Normal</div>
             <div class="system-check">THERMAL SHIELD</div>
-            <!-- <div class="status applied">Applied</div>
+            <div class="status applied">Applied</div>
             <div class="system-check">BURN GO/NO-GO</div>
             <div class="status normal">Normal</div>
             <div class="system-check">POWER COMPLETION</div>
@@ -26,21 +24,21 @@
             <div class="system-check">STATION DECK CHECK</div>
             <div class="status normal">Normal</div> -->
             <div class="gauge"> 
-                <div class="gauge__body">
+                <!-- <div class="gauge__body">
                     <div class="gauge__fill"></div>
                     <div class="gauge__cover">
                         <div class="gauge__text">LOOP A</div>
                         <div class="gauge__value">26.53°C</div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
         <section  class="center-panel">
             <div id="title">
-            <h1 id = "title" class="title">VEHICLE OVERVIEW</h1>
+            <!-- <h1 id = "title" class="title">VEHICLE OVERVIEW</h1> -->
             </div>
             <div class="metrics">
-                <div class="metric">
+                <!-- <div class="metric">
                     <div class="metric-title">LOOP B</div>
                     <div class="metric-value">20.00 °C</div>
                 </div>
@@ -50,15 +48,15 @@
                 </div>
                 <div class="metric">
                     <div class="metric-title">NET PWR 2</div>
-                    <div class="metric-value">0.00 W</div>
-                </div>
+                    <div class="metric-value">0.00 W</div> -->
+                </div> 
             </div>
             <div class="rocket-image">
                 <img src="storage/img/prueba.avif" alt="Rocket Image" >
             </div>
         </section>
         <section class="right-panel">
-            <div class="right-metric">
+            <!-- <div class="right-metric">
                 <div class="right-title">Inertial Velocity</div>
                 <div class="right-bar">
                     <div class="right-fill" style="width: 76%;"></div>
@@ -92,15 +90,15 @@
                     <div class="right-fill" style="width: 30%;"></div>
                 </div>
                 <div class="right-value">51.67°</div>
-            </div>
-            <div class="otro">
-                <div class="gauge__body">
+            </div> -->
+            <div id = "otro" class="otro">
+                <!-- <div class="gauge__body">
                     <div class="gauge__fill"></div>
                     <div class="gauge__cover">
                         <div class="gauge__text">LOOP A</div>
                         <div class="gauge__value">26.53°C</div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
@@ -108,7 +106,7 @@
         <ul>
             <li>
                 <a href="#">
-                    <img src="storage/img/starlink}.png">
+                    <img src="storage/img/starlink.png">
                     <span>Starlink</span>
                 </a>
             </li>
@@ -191,22 +189,11 @@
                 </a>
             </li>
         </ul>
-
-        <nav class="navinformation">
-            <div id="information2" class="informationitem">
-                <div class="load"></div>
-                <div class="load"></div>
-                <div class="load"></div>
-                <div class="load"></div>
-                <div class="load"></div>
-            </div>
-            <div id="pagination" class="informationbuttom">
-
-
-            </div>
-        </nav>
-
     </footer>
-    
+    <div id="paginacion" class="informationbuttom">
+
+
+    </div>
+
 </body>
 </html>
