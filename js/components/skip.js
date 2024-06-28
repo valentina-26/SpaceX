@@ -1,4 +1,5 @@
-import { getRocketNameById, idRocket,descriptionRocket,getRocketMoreInfoById } from "../modules/data.js";
+import { getRocketNameById, idRocket,descriptionRocket,getRocketMoreInfoById
+ } from "../modules/data.js";
 import { nameRocket,description} from "../components/Rockets.js";
 
 
