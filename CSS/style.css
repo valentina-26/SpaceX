@@ -87,27 +87,29 @@ main {
     margin-top: 20px;
 }
 
+
+
 .rocket-image {
     margin-left: 30%;
     display: flex;
     width: 400px;
     height: 300px;
-    overflow-x: auto; /* Usamos 'auto' en lugar de 'scroll' para mostrar el scroll solo cuando sea necesario */
-    /* background-color: #00aaff; */
+    overflow-x: auto;
     gap: 20px;
-    white-space: nowrap; /* Evita que las imágenes se dividan en varias líneas */
+    white-space: nowrap;
 }
 
 .carousel {
     display: flex;
-    transition: transform 0.3s ease; /* Añade una transición suave al cambiar de imagen */
+    transition: transform 0.3s ease;
+   
 }
 
 .carousel img {
     width: 400px; /* Ancho del contenedor principal */
     height: auto; /* Para mantener la proporción de la imagen */
-    flex: 0 0 auto; /* Fuerza a las imágenes a tener su tamaño original */
-    margin-right: 20px; /* Espacio entre cada imagen */
+    flex: 0 0 auto; 
+    margin-right: 20px; 
 }
 
 
