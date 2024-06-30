@@ -88,47 +88,47 @@ export const IMG = async (id) => {
 }
 
 //CAPSULES
-// export const IDcapsule = async () => {
-//     let config = {
-//         headers: {
-//             "content-type": "application/json"
-//         },
-//         method: "POST",
-//         body: JSON.stringify({
-//             "query": {
-//             },
-//             "options":{
-//             "select": "id"
-            
-//             }
-//         })
-//     };
+export const getCapsulasAllId = async () => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {},
+            "options": {
+                "select": "id"
+            }
+        })
+    };
 
-//     let res = await fetch("https://api.spacexdata.com/v4/capsules/query", config);
-//     let { docs } = await res.json();
-//     return docs
-// };
+    let res = await fetch("https://api.spacexdata.com/v4/capsules/query", config);
+    const { docs } = await res.json();
+    console.log(docs);
+    return docs;
+}
 
-// export const Typecapsule = async () => {
-//     let config = {
-//         headers: {
-//             "content-type": "application/json"
-//         },
-//         method: "POST",
-//         body: JSON.stringify({
-//             "query": {
-//             "id": "5e9e2c5bf35918ed873b2664"
-//             },
-//             "options":{
-//             "select":"type"
-//             }
-//         })
-//     };
+export const getInfoCapsules = async (id) => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {
+                "_id":id
+            },
+            "options": {
+              "select":"serial" 
+            }
+        })
+    };
 
-//     let res = await fetch("https://api.spacexdata.com/v4/capsules/query", config);
-//     let { docs } = await res.json();
-//     return docs
-// };
+    let res = await fetch ("https://api.spacexdata.com/v4/capsules/query", config);
+    const { docs } = await res.json();
+    console.log(docs[0]);
+    return docs[0];
+}
 
 // export const Statuscapsule = async () => {
 //     let config = {

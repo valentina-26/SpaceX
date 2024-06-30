@@ -1,8 +1,8 @@
 import { getRocketNameById, idRocket,getRocketMoreInfoById,IMG} from "../modules/data.js";
-import { nameRocket,description,plusInfoRocket3I} from "../components/Rockets.js";
+import { nameRocket,description,plusInfoRocket3I} from "./Rockets.js";
 
 
-export const paginationRockets = async () => {
+export const skipRockets = async () => {
     const rockets = await idRocket();
     const html = rockets.map((rocket, index) => {
         const pag = index + 1;
@@ -14,7 +14,7 @@ export const paginationRockets = async () => {
 
 
 
-export const setupPagination = async () => {
+export const FillRockets = async () => {
     document.querySelector("#paginacion").addEventListener("click", async (e) => {
         e.preventDefault();
         const id = e.target.dataset.id;
