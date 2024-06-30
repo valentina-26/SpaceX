@@ -53,7 +53,6 @@ main {
 
 .title {
     font-size: 4em;
-    margin-bottom: 20px;
 }
 
 .system-check {
@@ -82,10 +81,10 @@ main {
 .status.connected {
     color: #dd2525;
 }
-
+/* 
 .connections {
     margin-top: 20px;
-}
+} */
 
 
 
@@ -95,8 +94,10 @@ main {
     width: 400px;
     height: 300px;
     overflow-x: auto;
-    gap: 20px;
+    gap: 50px;
     white-space: nowrap;
+    margin-top: -30px;
+    margin-bottom: -15%;
 }
 
 .carousel {
@@ -330,7 +331,7 @@ main {
     z-index: 10;
     position: fixed;
     bottom: 65px;
-    right: 150px;
+    right: 50px;
     background-color: #16172c85;
     padding: 20px;
     border-style:groove;
@@ -344,7 +345,8 @@ main {
 }
 
 .left-rocket{
-    width: 60%;
+    width: 90%;
+
     background-color: #1a1c3a6e;
     padding: 10px;
     border-radius: 20px;
