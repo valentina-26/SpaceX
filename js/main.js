@@ -1,6 +1,5 @@
-import { skipRockets, FillRockets } from "./components/skipRockets.js";
-import { skipCapsules,FillCapsules } from "./components/skipCapsules.js";
-
+import { fillrockets, skipRockets } from "./components/skipRockets.js";
+import { FillCapsules,skipCapsules } from "./components/skipCapsules.js";
 
 
 export const clearInformation = () => {
@@ -9,93 +8,38 @@ export const clearInformation = () => {
     document.querySelector("#metrics").innerHTML = "";
     document.querySelector("#engines").innerHTML = "";
     document.querySelector("#otro").innerHTML = "";
+    document.querySelector("#imagen").innerHTML = "";
 }
 
 const handleRocketClick = async e => {
     clearInformation (); 
-    document.querySelector("#pagination").innerHTML = await skipRockets();
-    FillRockets();
+    document.querySelector("#paginacion").innerHTML = await skipRockets();
+    fillrockets();
 }
 
 const handleCapsulesClick = async e => {
     clearInformation(); 
-    document.querySelector("#pagination").innerHTML = await skipCapsules();
-    setUpPaginationCapsules();
+    document.querySelector("#paginacion").innerHTML = await skipCapsules();
+    FillCapsules();
 }
 
-
 document.addEventListener("DOMContentLoaded", async () => {
-document.addEventListener("DOMContentLoaded", async () => {
-    document.querySelector("#pagination").innerHTML = await skipRockets();    
-    const rocketElement = document.querySelector("#Rockets");
-
+    const rocketElement = document.querySelector("#rockets");
     const capsulesElement = document.querySelector("#capsules");
-    FillCapsules();
 
     rocketElement.addEventListener("click", handleRocketClick);
     capsulesElement.addEventListener("click", handleCapsulesClick);
 
     clearInformation(); 
-    document.querySelector("#pagination").innerHTML = await skipRockets();
-    FillRockets();
+    document.querySelector("#paginacion").innerHTML = await skipRockets();
+    fillrockets();
 });
-});
 
 
-
-
-document.querySelector("#Rockets").addEventListener("click", () => {
+document.querySelector("#rockets").addEventListener("click", () => {
     document.querySelector("#capsules").removeEventListener("click", handleCapsulesClick);
 });
 
 document.querySelector("#capsules").addEventListener("click", () => {
-    document.querySelector("#Rockets").removeEventListener("click", handleRocketClick);
+    document.querySelector("#rockets").removeEventListener("click", handleRocketClick);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { skipRockets, FillRockets } from "./components/skipRockets.js";
-
-
-// document.addEventListener("DOMContentLoaded", async () => {
-//     document.querySelector("#paginacion").innerHTML = await skipRockets();
-        
-//     FillRockets();
-// });

@@ -88,8 +88,8 @@ export const IMG = async (id) => {
 }
 
 //CAPSULES
-export const getCapsulasAllId = async () => {
-    const config = {
+export const getAllCapsulesId = async () => {
+    const options = {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -102,9 +102,9 @@ export const getCapsulasAllId = async () => {
         })
     };
 
-    let res = await fetch("https://api.spacexdata.com/v4/capsules/query", config);
+    const res = await fetch("https://api.spacexdata.com/v4/capsules/query", config);
     const { docs } = await res.json();
-    console.log(docs);
+    // console.log(docs);
     return docs;
 }
 
@@ -116,10 +116,9 @@ export const getInfoCapsules = async (id) => {
         },
         body: JSON.stringify({
             "query": {
-                "_id":id
+                "_id": id
             },
             "options": {
-              "select":"serial" 
             }
         })
     };
