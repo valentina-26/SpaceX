@@ -60,7 +60,6 @@ export const getRocketMoreInfoById = async (id) => {
 
     const res = await fetch("https://api.spacexdata.com/v4/rockets/query", config);
     const { docs } = await res.json();
-    console.log(docs);
     return docs[0];
 }
 
@@ -83,7 +82,6 @@ export const IMG = async (id) => {
 
     const res = await fetch("https://api.spacexdata.com/v4/rockets/query", config);
     const { docs } = await res.json();
-    console.log(docs);
     return docs[0];
 }
 
@@ -172,6 +170,51 @@ export const getAllinfoCores = async (id) => {
     const { docs } = await res.json();
     return docs[0];
 }
+
+
+//CREW
+export const getAllCrewid = async () => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {},
+            "options": {
+                "select": "id"
+            }
+        })
+    };
+
+    const res = await fetch("https://api.spacexdata.com/v4/crew/query", config);
+    const { docs } = await res.json();
+    // console.log(docs);
+    return docs;
+}
+
+
+export const getAllinfoCrew = async (id) => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {
+                "_id": id
+            },
+            "options": {
+                "select":"name agency image wikipedia launches status"
+            }
+        })
+    };
+
+    let res = await fetch ("https://api.spacexdata.com/v4/crew/query", config);
+    const { docs } = await res.json();
+    return docs[0];
+}
+
 
 
 

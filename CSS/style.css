@@ -505,58 +505,6 @@ main {
     border-style: groove;
 }
 
-.footerCapsules {
-    background-color: #16172c;
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 150%;
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    margin-left: 180px;
-    
-}
-
-
-
-.footerCapsules ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 1200px; /* Ajusta el ancho máximo del contenedor */
-    
-    
-}
-
-.footerCapsules li {
-    display: inline-block;
-    margin: 0 10px; /* Espaciado horizontal entre los elementos */
-}
-
-.footerCapsules a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: white; /* Color del texto */
-    font-size: 14px; /* Tamaño de la fuente */
-}
-
-.footerCapsules a img {
-    width: 30px; /* Ajusta el tamaño de las imágenes */
-    height: 30px;
-    margin-bottom: 5px;
-}
-
-/* Opcional: cambiar el color del texto cuando se pase el ratón por encima */
-.footerCapsules img:hover {
-    color: #FF4500; /* Cambia el color del texto al pasar el ratón */
-}
 
 .title{
     font-size: 2rem;
@@ -580,3 +528,72 @@ main {
 
 
 
+.gauge1 {
+    width: 200px;
+    height: 200px;
+    background-color: #1a1c3a5b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 60px;
+    border-style: groove;
+    margin-left: 65PX;
+    margin-bottom: 25px;
+    
+}
+
+
+.gauge2 {
+    width: 200px;
+    height: 200px;
+    background-color: #1a1c3a5b;
+    display: flex;justify-content: center;
+    align-items: center;
+    border-radius: 60px;
+    border-style: groove;
+    margin-left: 55PX;
+    margin-bottom: 25px;
+ 
+    
+}
+
+.left-circleCrew{
+    width: 40%;
+    height: 60px;
+    background-color:  #1a1c3a5b;
+    padding: 20px;
+    border-radius: 50px;
+    border-style: groove;
+    margin-bottom: 30px;
+    margin-left: 43%;
+ 
+
+}
+
+.left-circleCrew2{
+    width: 40%;
+    height: 60px;
+    background-color: #1a1c3a62;
+    padding: 20px;
+    border-radius: 50px;
+    border-style: groove;
+    margin-bottom: 25px;
+    margin-left: 43%;
+};
+
+
+.imgCrew {
+    width: 150px;
+    height: 15vh;
+  
+    margin-left: 65px;
+}
+
+.imgCrew img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
+    border-radius: 30%;
+    border-style: groove;
+    margin-top: 50%;
+}
