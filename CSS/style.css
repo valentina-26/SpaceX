@@ -370,7 +370,7 @@ main {
 }
 
 .left-circle-titlt{
-    text-align: groove;
+    text-align: center;
 
 }
 
@@ -697,10 +697,50 @@ main {
     border-radius: 60px;
     border-style: groove;
     margin-left: 45PX;
-    margin-bottom: 25px;
-    
+    margin-bottom: 25px;    
+}
 
+.shipimg{
+    width: 600px;
+    height: 40vh;
+    margin-left: 165px;
+
+}.shipimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
+    border-radius: 30%;
+    border-style: groove;
     
 }
 
+.left-rocketship{
+    width: 110%;
+
+    background-color: #1a1c3a6e;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    border-style: groove;
+}
+.status-normal{
+    text-align: center;
+}
+
+.system-check{
+    text-align: center;
+}
+
+.left-circleship{
+    width: 40%;
+    height: 60px;
+    background-color: #1a1c3a62;
+    padding: 20px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+    border-style: groove;
+    margin-bottom: 25px;
+    margin-left: 135px
+
+}
 

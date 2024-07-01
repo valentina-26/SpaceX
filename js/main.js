@@ -4,6 +4,7 @@ import {skipCores,FillCores} from "./components/skipCores.js"
 import {skipCrew,FillCrew} from "./components/skipCrew.js"
 import { skipHistory,FillHistory } from "./components/skipHistory.js";
 import { skipStarlink,FillStarlink } from "./components/skipStarlink.js";
+import { skipships,Fillships } from "./components/skipShip.js";
 
 
 export const clearInformation = () => {
@@ -50,6 +51,11 @@ const handleStarlinkClick = async e => {
     document.querySelector("#paginacion").innerHTML = await skipStarlink();
     FillStarlink();
 }
+const handleShipClick = async e => {
+    clearInformation();
+    document.querySelector("#paginacion").innerHTML = await skipships();
+    Fillships();
+}
 
 document.addEventListener("DOMContentLoaded", async () => {
     const rocketElement = document.querySelector("#rockets");
@@ -58,15 +64,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     const crewElement = document.querySelector("#crew");
     const HistoryElemnt = document.querySelector("#history");
     const starlinkElement = document.querySelector("#starlink")
+    const shipElement = document.querySelector("#ships")
 
 
-    if (rocketElement && capsulesElement && coresElement && crewElement && HistoryElemnt && starlinkElement) {
+    if (rocketElement && capsulesElement && coresElement && crewElement && HistoryElemnt && starlinkElement && shipElement) {
         rocketElement.addEventListener("click", handleRocketClick);
         capsulesElement.addEventListener("click", handleCapsulesClick);
         coresElement.addEventListener("click", handleCoresClick);
         crewElement.addEventListener("click",handleCrewClick);
         HistoryElemnt.addEventListener("click",handleHistoryClick);
         starlinkElement.addEventListener("click",handleStarlinkClick);
+        shipElement.addEventListener("click",handleShipClick)
 
         clearInformation();
         document.querySelector("#paginacion").innerHTML = await skipRockets();
