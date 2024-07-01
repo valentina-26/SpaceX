@@ -2,6 +2,7 @@ import { fillrockets, skipRockets } from "./components/skipRockets.js";
 import { FillCapsules,skipCapsules } from "./components/skipCapsules.js";
 import {skipCores,FillCores} from "./components/skipCores.js"
 import {skipCrew,FillCrew} from "./components/skipCrew.js"
+import { skipHistory,FillHistory } from "./components/skipHistory.js";
 
 
 export const clearInformation = () => {
@@ -37,18 +38,26 @@ const handleCrewClick = async e => {
     FillCrew();
 }
 
+const handleHistoryClick = async e => {
+    clearInformation();
+    document.querySelector("#paginacion").innerHTML = await skipHistory();
+    FillHistory();
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
     const rocketElement = document.querySelector("#rockets");
     const capsulesElement = document.querySelector("#capsules");
     const coresElement = document.querySelector("#cores");
-    const crewElement = document.querySelector("#crew")
+    const crewElement = document.querySelector("#crew");
+    const HistoryElemnt = document.querySelector("#history");
 
 
-    if (rocketElement && capsulesElement && coresElement && crewElement) {
+    if (rocketElement && capsulesElement && coresElement && crewElement && HistoryElemnt) {
         rocketElement.addEventListener("click", handleRocketClick);
         capsulesElement.addEventListener("click", handleCapsulesClick);
         coresElement.addEventListener("click", handleCoresClick);
-        crewElement.addEventListener("click",handleCrewClick)
+        crewElement.addEventListener("click",handleCrewClick);
+        HistoryElemnt.addEventListener("click",handleHistoryClick)
 
         clearInformation();
         document.querySelector("#paginacion").innerHTML = await skipRockets();

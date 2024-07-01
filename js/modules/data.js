@@ -215,6 +215,49 @@ export const getAllinfoCrew = async (id) => {
     return docs[0];
 }
 
+//HISTORY
+export const getAllhistoryid = async () => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {},
+            "options": {
+                "select": "id"
+            }
+        })
+    };
+
+    const res = await fetch("https://api.spacexdata.com/v4/history/query", config);
+    const { docs } = await res.json();
+    // console.log(docs);
+    return docs;
+}
+
+
+export const getAllinfoHistory = async (id) => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {
+                "_id": id
+            },
+            "options": {
+                "select":"title event_date_utc event_date_unix event_date_unix links.article"
+            }
+        })
+    };
+
+    let res = await fetch ("https://api.spacexdata.com/v4/history/query", config);
+    const { docs } = await res.json();
+    return docs[0];
+}
+
 
 
 
