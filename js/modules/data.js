@@ -258,6 +258,49 @@ export const getAllinfoHistory = async (id) => {
     return docs[0];
 }
 
+//STARLINK
+export const getAllstarlinkid = async () => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {},
+            "options": {
+                "select": "id"
+            }
+        })
+    };
+
+    const res = await fetch("https://api.spacexdata.com/v4/starlink/query", config);
+    const { docs } = await res.json();
+    // console.log(docs);
+    return docs;
+}
+
+
+export const getAllinfostarlink = async (id) => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {
+                "_id": id
+            },
+            "options": {
+                "select":"spaceTrack.CCSDS_OMM_VERS spaceTrack.COMMENT spaceTrack.CREATION_DATE spaceTrack.OBJECT_NAME spaceTrack.CENTER_NAME spaceTrack.INCLINATION spaceTrack.MEAN_ANOMALY spaceTrack.CLASSIFICATION_TYPE spaceTrack.NORAD_CAT_ID spaceTrack.ELEMENT_SET_NO spaceTrack.MEAN_MOTION_DOT spaceTrack.PERIOD spaceTrack.OBJECT_TYPE spaceTrack.COUNTRY_CODE spaceTrack.LAUNCH_DATE spaceTrack.SITE spaceTrack.FILE spaceTrack.TLE_LINE0 spaceTrack.TLE_LINE1 spaceTrack.TLE_LINE2 version launch id"
+            }
+        })
+    };
+
+    let res = await fetch ("https://api.spacexdata.com/v4/starlink/query", config);
+    const { docs } = await res.json();
+    return docs[0];
+}
+
 
 
 

@@ -582,14 +582,13 @@ main {
 };
 
 
-.imgCrew {
+.imagenCrew {
     width: 150px;
     height: 15vh;
-  
     margin-left: 65px;
 };
 
-.imgCrew img {
+.imagenCrew img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
@@ -639,6 +638,69 @@ main {
     border-radius: 30%;
     border-style: groove;
     margin-left: 108px;
+}
+
+
+.CrewImagen{
+    width: 300px;
+    height: 40vh;
+    margin-left: 65px;
+
+}.CrewImagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
+    border-radius: 30%;
+    border-style: groove;
+    margin-top: 55%;
+}
+
+
+.CrewImagen2{
+    width: 300px;
+    height: 40vh;
+    margin-left: -60px;
+
+
+}.CrewImagen2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
+    border-radius: 30%;
+    border-style: groove;
+    margin-top: 55%;
+    margin-right: -40px;
+}
+
+.elonstar {
+    width: 500px;
+    height: 30vh;
+    margin-left: 25%;
+    margin-bottom: 20px;
+}
+
+.elonstar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
+    border-radius: 30%;
+    border-style: groove;
+    margin-top: 50px;
+}
+
+.gaugestar {
+    width: 200px;
+    height: 200px;
+    background-color: #1a1c3a5b;
+    display: flex;justify-content: center;
+    align-items: center;
+    border-radius: 60px;
+    border-style: groove;
+    margin-left: 45PX;
+    margin-bottom: 25px;
+    
+
+    
 }
 
 

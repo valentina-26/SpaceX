@@ -5,7 +5,7 @@ export const titleCrew = async (info) =>{
 
 export const infoCrew = async (descrip) =>{
     document.querySelector("#izquierda").innerHTML = /*html*/`
-    <div class="imgCrew">
+    <div class="CrewImagen">
         <img src="${descrip.image}" referrerpolicy="no-referrer">
     </div> 
         `;
@@ -39,7 +39,7 @@ export const infoCrew = async (descrip) =>{
  
             `;
     document.querySelector("#derecha").innerHTML = /*html*/`
-    <div class="imgCrew">
+    <div class="CrewImagen2">
         <img src="${descrip.image}" referrerpolicy="no-referrer">
     </div> 
             `;
