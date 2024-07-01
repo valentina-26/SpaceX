@@ -12,13 +12,13 @@ export const clearInformation = () => {
 }
 
 const handleRocketClick = async e => {
-    clearInformation (); 
+    clearInformation();
     document.querySelector("#paginacion").innerHTML = await skipRockets();
     fillrockets();
 }
 
 const handleCapsulesClick = async e => {
-    clearInformation(); 
+    clearInformation();
     document.querySelector("#paginacion").innerHTML = await skipCapsules();
     FillCapsules();
 }
@@ -26,20 +26,16 @@ const handleCapsulesClick = async e => {
 document.addEventListener("DOMContentLoaded", async () => {
     const rocketElement = document.querySelector("#rockets");
     const capsulesElement = document.querySelector("#capsules");
+    const capsulesname = document.querySelector("#capsulesB")
 
-    rocketElement.addEventListener("click", handleRocketClick);
-    capsulesElement.addEventListener("click", handleCapsulesClick);
+    if (rocketElement && capsulesElement) {
+        rocketElement.addEventListener("click", handleRocketClick);
+        capsulesElement.addEventListener("click", handleCapsulesClick);
 
-    clearInformation(); 
-    document.querySelector("#paginacion").innerHTML = await skipRockets();
-    fillrockets();
-});
-
-
-document.querySelector("#rockets").addEventListener("click", () => {
-    document.querySelector("#capsules").removeEventListener("click", handleCapsulesClick);
-});
-
-document.querySelector("#capsules").addEventListener("click", () => {
-    document.querySelector("#rockets").removeEventListener("click", handleRocketClick);
+        clearInformation();
+        document.querySelector("#paginacion").innerHTML = await skipRockets();
+        fillrockets();
+    } else {
+        console.error("No se encontraron los elementos con IDs '#rockets' o '#capsules'.");
+    }
 });

@@ -1,5 +1,5 @@
 import {getAllCapsulesId,getInfoCapsules} from"../modules/data.js"
-import {InfoCapsules} from "./capsules.js"
+import {InfoCapsules,titleCapsules} from "./capsules.js"
 
  export const skipCapsules = async () => {
     const capsules = await getAllCapsulesId();
@@ -23,7 +23,9 @@ import {InfoCapsules} from "./capsules.js"
 
     const loadCapsule = async(id) => {
 
-        const capsuleInfo = await getInfoCapsules(id);
+        const capsuletitle = await getInfoCapsules(id);
+        await titleCapsules (capsuletitle)
 
+        const capsuleInfo = await getInfoCapsules(id);
         await InfoCapsules(capsuleInfo);
     };

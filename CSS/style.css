@@ -45,6 +45,7 @@ main {
 .center-panel {
     width: 60%;
     text-align: center;
+    
 }
 
 .right-panel {
@@ -414,9 +415,10 @@ main {
 .engines{
     background-color: #1a1c3a70;
     text-align: center;
-    padding: 8px;
+    padding: 10px;
     border-style:groove;
     margin-bottom: 25px;
+    border-radius: 10%;
 }
 
 .informacion{
@@ -428,3 +430,131 @@ main {
     border-radius: 20%;
     margin-bottom:25px
 }
+
+
+.left-caposules{
+    background-color:#1a1c3a70;
+    padding: 15px;
+    border-style: groove;
+    border-radius: 30%;
+}
+
+.originGif {
+    width: 450px;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-bottom: 15px;
+}
+
+.originGif img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
+    border-radius: 30%;
+    border-style: groove;
+}
+
+.enginescAPSULES{
+    background-color: #1a1c3a70;
+    text-align: center;
+    padding: 10px;
+    border-style:groove;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+
+.elonvaquero {
+    width: 250px;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 170%;
+}
+
+.elonvaquero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
+    border-radius: 30%;
+    border-style: groove;
+}
+
+.elonvaquero2 {
+    width: 250px;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 170%;
+    margin-left: 65px;
+}
+
+.elonvaquero2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
+    border-radius: 30%;
+    border-style: groove;
+}
+
+.footerCapsules {
+    background-color: #16172c;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150%;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    margin-left: 180px;
+    
+}
+
+
+
+.footerCapsules ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px; /* Ajusta el ancho máximo del contenedor */
+    
+    
+}
+
+.footerCapsules li {
+    display: inline-block;
+    margin: 0 10px; /* Espaciado horizontal entre los elementos */
+}
+
+.footerCapsules a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white; /* Color del texto */
+    font-size: 14px; /* Tamaño de la fuente */
+}
+
+.footerCapsules a img {
+    width: 30px; /* Ajusta el tamaño de las imágenes */
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+/* Opcional: cambiar el color del texto cuando se pase el ratón por encima */
+.footerCapsules img:hover {
+    color: #FF4500; /* Cambia el color del texto al pasar el ratón */
+}
+
+
+

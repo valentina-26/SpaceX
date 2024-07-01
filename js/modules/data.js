@@ -89,7 +89,7 @@ export const IMG = async (id) => {
 
 //CAPSULES
 export const getAllCapsulesId = async () => {
-    const options = {
+    const config = {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -119,6 +119,7 @@ export const getInfoCapsules = async (id) => {
                 "_id": id
             },
             "options": {
+                "select":" launches id serial reuse_count water_landings land_landings last_update status type"
             }
         })
     };
@@ -128,6 +129,7 @@ export const getInfoCapsules = async (id) => {
     console.log(docs[0]);
     return docs[0];
 }
+
 
 // export const Statuscapsule = async () => {
 //     let config = {
