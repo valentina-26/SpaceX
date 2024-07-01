@@ -344,6 +344,49 @@ export const getAllinfoships = async (id) => {
     return docs[0];
 }
 
+//PAYLOADS
+export const getAllpayloadsid = async () => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {},
+            "options": {
+                "select": "id"
+            }
+        })
+    };
+
+    const res = await fetch("https://api.spacexdata.com/v4/ships/query", config);
+    const { docs } = await res.json();
+    // console.log(docs);
+    return docs;
+}
+
+
+export const getAllinfopayloads = async (id) => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {
+                "_id": id
+            },
+            "options": {
+                "select":"name type reused launch customers norad_ids nationalities manufacturers mass_kg mass_lbs orbit reference_system regime semi_major_axis_km eccentricity periapsis_km apoapsis_kminclination_deg period_min lifespan_years epoch mean_motion mean_anomaly arg_of_pericenter raan"
+            }
+        })
+    };
+
+    let res = await fetch ("https://api.spacexdata.com/v4/ships/query", config);
+    const { docs } = await res.json();
+    return docs[0];
+}
+
 
 
 

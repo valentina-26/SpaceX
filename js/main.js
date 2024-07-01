@@ -5,6 +5,7 @@ import {skipCrew,FillCrew} from "./components/skipCrew.js"
 import { skipHistory,FillHistory } from "./components/skipHistory.js";
 import { skipStarlink,FillStarlink } from "./components/skipStarlink.js";
 import { skipships,Fillships } from "./components/skipShip.js";
+import { skipPayloads,FillPayloads } from "./components/skipPayloads.js";
 
 
 export const clearInformation = () => {
@@ -57,6 +58,12 @@ const handleShipClick = async e => {
     Fillships();
 }
 
+const handlePayloadsClick = async e => {
+    clearInformation();
+    document.querySelector("#paginacion").innerHTML = await skipPayloads();
+    FillPayloads();
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
     const rocketElement = document.querySelector("#rockets");
     const capsulesElement = document.querySelector("#capsules");
@@ -65,16 +72,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     const HistoryElemnt = document.querySelector("#history");
     const starlinkElement = document.querySelector("#starlink")
     const shipElement = document.querySelector("#ships")
+    const PayloadsElemt = document.querySelector("#payloads")
 
 
-    if (rocketElement && capsulesElement && coresElement && crewElement && HistoryElemnt && starlinkElement && shipElement) {
+    if (rocketElement && capsulesElement && coresElement && crewElement && HistoryElemnt && starlinkElement && shipElement && PayloadsElemt) {
         rocketElement.addEventListener("click", handleRocketClick);
         capsulesElement.addEventListener("click", handleCapsulesClick);
         coresElement.addEventListener("click", handleCoresClick);
         crewElement.addEventListener("click",handleCrewClick);
         HistoryElemnt.addEventListener("click",handleHistoryClick);
         starlinkElement.addEventListener("click",handleStarlinkClick);
-        shipElement.addEventListener("click",handleShipClick)
+        shipElement.addEventListener("click",handleShipClick);
+        PayloadsElemt.addEventListener("click",handlePayloadsClick);
 
         clearInformation();
         document.querySelector("#paginacion").innerHTML = await skipRockets();
