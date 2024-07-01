@@ -114,7 +114,7 @@ export const description = async (descrip) => {
 
 
 export const plusInfoRocket3I = async (plusInfo) => {
-    console.log(plusInfo.flickr_images)
+    // console.log(plusInfo.flickr_images)
     const img = async () => {
         let plantilla = '';
         let imagenes = plusInfo.flickr_images;
@@ -131,7 +131,7 @@ export const plusInfoRocket3I = async (plusInfo) => {
         return plantilla;
     }
 
-    console.log(await img());
+    // console.log(await img());
 
     document.querySelector("#imagen").innerHTML = await img();
 };

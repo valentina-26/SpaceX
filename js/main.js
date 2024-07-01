@@ -1,5 +1,6 @@
 import { fillrockets, skipRockets } from "./components/skipRockets.js";
 import { FillCapsules,skipCapsules } from "./components/skipCapsules.js";
+import {skipCores,FillCores} from "./components/skipCores.js"
 
 
 export const clearInformation = () => {
@@ -23,14 +24,22 @@ const handleCapsulesClick = async e => {
     FillCapsules();
 }
 
+const handleCoresClick = async e => {
+    clearInformation();
+    document.querySelector("#paginacion").innerHTML = await skipCores();
+    FillCores();
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
     const rocketElement = document.querySelector("#rockets");
     const capsulesElement = document.querySelector("#capsules");
-    const capsulesname = document.querySelector("#capsulesB")
+    const coresElement = document.querySelector("#cores");
 
-    if (rocketElement && capsulesElement) {
+
+    if (rocketElement && capsulesElement && coresElement) {
         rocketElement.addEventListener("click", handleRocketClick);
         capsulesElement.addEventListener("click", handleCapsulesClick);
+        coresElement.addEventListener("click", handleCoresClick);
 
         clearInformation();
         document.querySelector("#paginacion").innerHTML = await skipRockets();
