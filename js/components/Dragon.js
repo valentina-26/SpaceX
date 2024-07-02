@@ -1,7 +1,6 @@
 export const Dragontitle = async(info)  =>{
     document.querySelector("#title").innerHTML = info.name;
 }
-
 export const DragonInfo = async (descrip) => {
     document.querySelector("#izquerda").innerHTML = /*html*/`
         <p>HEAT_SHIELD</p>

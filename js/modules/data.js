@@ -409,26 +409,85 @@ export const getAllroadsterid = async () => {
 }
 
 
-export const getAllinforoadster = async (id) => {
-    const config = {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            "query": {
-                "_id": id
-            },
-            "options": {
-                "select":"flickr_images name launch_date_utc launch_date_unix launch_mass_kg launch_mass_lbs norad_id epoch_jd orbit_type apoapsis_au periapsis_au semi_major_axis_au eccentricity inclination longitude periapsis_arg period_days speed_kph speed_mph earth_distance_km earth_distance_mi mars_distance_km mars_distance_mi wikipedia video details"
-            }
-        })
-    };
+// export const getAllinforoadster = async (id) => {
+//     const config = {
+//         method: 'POST',
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({
+//             "query": {
+//                 "_id": id
+//             },
+//             "options": {
+//                 "select": "name launch_date_utc launch_mass_kg norad_id flickr_images wikipedia video details"
+//             }
+//         })
+//     };
 
-    let res = await fetch ("https://api.spacexdata.com/v4/roadster/query", config);
-    const { docs } = await res.json();
-    return docs[0];
+//     try {
+//         let res = await fetch("https://api.spacexdata.com/v4/roadster/query", config);
+//         let data = await res.json();
+
+//         // Log the response data to inspect
+//         console.log("Response data:", data);
+
+//         const { docs } = data;
+//         if (!docs || docs.length === 0) {
+//             throw new Error(`Roadster with ID ${id} not found`);
+//         }
+
+//         return docs[0];
+//     } catch (error) {
+//         console.error("Error fetching roadster data:", error);
+//         throw error; // Re-throw the error to handle it in the calling function
+//     }
+// };
+export const getAllinforoadster = async () => {
+    try {
+        const response = await fetch('https://api.spacexdata.com/v4/roadster');
+        if (!response.ok) {
+            throw new Error('Failed to fetch roadster data');
+        }
+        const { name, launch_date_utc, launch_date_unix, launch_mass_kg, launch_mass_lbs, norad_id, epoch_jd, orbit_type, apoapsis_au, periapsis_au, semi_major_axis_au, eccentricity, inclination, longitude, periapsis_arg, period_days, speed_kph, speed_mph, earth_distance_km, earth_distance_mi, mars_distance_km, mars_distance_mi, flickr_images, wikipedia, video, details, id } = await response.json();
+        
+        return {
+            name,
+            launch_date_utc,
+            launch_date_unix,
+            launch_mass_kg,
+            launch_mass_lbs,
+            norad_id,
+            epoch_jd,
+            orbit_type,
+            apoapsis_au,
+            periapsis_au,
+            semi_major_axis_au,
+            eccentricity,
+            inclination,
+            longitude,
+            periapsis_arg,
+            period_days,
+            speed_kph,
+            speed_mph,
+            earth_distance_km,
+            earth_distance_mi,
+            mars_distance_km,
+            mars_distance_mi,
+            flickr_images,
+            wikipedia,
+            video,
+            details,
+            id
+        };
+    } catch (error) {
+        console.error('Error fetching roadster data:', error.message);
+        throw error;
+    }
 };
+
+
+
 
 //DRAGON
 export const getAllDragonid = async () => {

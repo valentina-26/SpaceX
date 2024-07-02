@@ -1,34 +1,29 @@
-import {getAllroadsterid,getAllinforoadster} from"../modules/data.js"
-import {RoadsterTitle,infoRoadster,plusInfoRocket3I} from "./roadster.js"
+import { getAllinforoadster } from "../modules/data.js";
+import { RoadsterTitle, infoRoadster, plusInfoRocket3I } from "./roadster.js";
 
 export const skipRoadster = async () => {
-    const Capsules = await getAllroadsterid();
-    const html = Capsules.map((Roadster, index) => {
-        const pag = index + 1;
-        return `<a href="#${pag}" data-id="${Roadster.id}">${pag}</a>`;
-    });
-
-    return html.join("");
+    return `<a href="#" data-id="5eb75f0842fea42237d7f3f4">1</a>`; // Directly provide the ID in the anchor tag
 };
 
-    export const FillRoadster = async() => {
-        document.querySelector("#paginacion").addEventListener("click", async e => {
-            e.preventDefault();
-            const id = e.target.dataset.id;
-            await loadRoadters(id);
-        });
-        const firstCapsuleId = document.querySelector("#paginacion").querySelector("a").dataset.id;
-        loadRoadters(firstCapsuleId);
+export const FillRoadster = async () => {
+    try {
+        await loadRoadsterData("5eb75f0842fea42237d7f3f4"); // Load data for the specific Roadster ID
+    } catch (error) {
+        console.error("Error initializing Roadster fill:", error);
     }
+};
 
-    const loadRoadters = async(id) => {
+const loadRoadsterData = async id => {
+    try {
         const title = await getAllinforoadster(id);
-        await RoadsterTitle (title);
+        await RoadsterTitle(title);
 
-        const Roadster = await getAllinforoadster(id);
-        await infoRoadster (Roadster);
+        const roadsterInfo = await getAllinforoadster(id);
+        await infoRoadster(roadsterInfo);
 
-        const imagenes = await infoRoadster(id)
-        // console.log(imagenes)
-        plusInfoRocket3I (imagenes)
-    };
+        const images = await getAllinforoadster(id);
+        plusInfoRocket3I(images);
+    } catch (error) {
+        console.error("Error loading Roadster data:", error);
+    }
+};
