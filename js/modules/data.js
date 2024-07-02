@@ -388,6 +388,222 @@ export const getAllinfopayloads = async (id) => {
 }
 
 
+//ROADSTER
+export const getAllroadsterid = async () => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {},
+            "options": {
+                "select": "id"
+            }
+        })
+    };
+
+    const res = await fetch("https://api.spacexdata.com/v4/roadster/query", config);
+    const { docs } = await res.json();
+    return docs;
+}
+
+
+export const getAllinforoadster = async (id) => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {
+                "_id": id
+            },
+            "options": {
+                "select":"flickr_images name launch_date_utc launch_date_unix launch_mass_kg launch_mass_lbs norad_id epoch_jd orbit_type apoapsis_au periapsis_au semi_major_axis_au eccentricity inclination longitude periapsis_arg period_days speed_kph speed_mph earth_distance_km earth_distance_mi mars_distance_km mars_distance_mi wikipedia video details"
+            }
+        })
+    };
+
+    let res = await fetch ("https://api.spacexdata.com/v4/roadster/query", config);
+    const { docs } = await res.json();
+    return docs[0];
+};
+
+//DRAGON
+export const getAllDragonid = async () => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {},
+            "options": {
+                "select": "id"
+            }
+        })
+    };
+
+    const res = await fetch("https://api.spacexdata.com/v4/dragons/query", config);
+    const { docs } = await res.json();
+    // console.log(docs);
+    return docs;
+}
+
+
+export const getAllinfoDragon = async (id) => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {
+                "_id": id
+            },
+            "options": {
+                "select": "heat_shield.material heat_shield.size_meters heat_shield.temp_degrees heat_shield.dev_partner launch_payload_mass.kg launch_payload_mass.lb trunk.trunk_volume.cubic_meters trunk.cargo.solar_array first_flight flickr_images name type active heat_shield.material heat_shield.size_meters heat_shield.temp_degrees heat_shield.dev_partner launch_payload_mass.kg launch_payload_mass.lb trunk.trunk_volume.cubic_meters trunk.cargo.solar_array first_flight flickr_images name type active thrusters.type thrusters.amount thrusters.pods thrusters.fuel_1 thrusters.fuel_2 thrusters.isp thrusters.thrust.kN thrusters.thrust.lbf wikipedia description"
+            }
+        })
+    };
+
+    let res = await fetch ("https://api.spacexdata.com/v4/dragons/query", config);
+    const { docs } = await res.json();
+    return docs[0];
+}
+
+//Launchpads
+export const getAllLaunchpadsid = async () => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {},
+            "options": {
+                "select": "id"
+            }
+        })
+    };
+
+    const res = await fetch("https://api.spacexdata.com/v4/launchpads/query", config);
+    const { docs } = await res.json();
+    // console.log(docs);
+    return docs;
+}
+
+
+export const getAllinfoLaunchpads = async (id) => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {
+                "_id": id
+            },
+            "options": {
+                "select": "name full_name locality region timezone latitude longitude launch_attempts launch_successes rockets launches status"
+            }
+        })
+    };
+
+    let res = await fetch ("https://api.spacexdata.com/v4/launchpads/query", config);
+    const { docs } = await res.json();
+    return docs[0];
+}
+
+//Landing Pads
+export const getAllLandingPadsid = async () => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {},
+            "options": {
+                "select": "id"
+            }
+        })
+    };
+
+    const res = await fetch("https://api.spacexdata.com/v4/landpads/query", config);
+    const { docs } = await res.json();
+    // console.log(docs);
+    return docs;
+}
+
+
+export const getAllinfoLandingPads = async (id) => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {
+                "_id": id
+            },
+            "options": {
+                "select":"name full_name status type locality region latitude longitude landing_attempts landing_successes wikipedia details launches"
+            }
+        })
+    };
+
+    let res = await fetch ("https://api.spacexdata.com/v4/landpads/query", config);
+    const { docs } = await res.json();
+    return docs[0];
+}
+
+
+//LAUNCHES
+export const getAlllaunchesid = async () => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {},
+            "options": {
+                "select": "id"
+            }
+        })
+    };
+
+    const res = await fetch("https://api.spacexdata.com/v4/launches/query", config);
+    const { docs } = await res.json();
+    // console.log(docs);
+    return docs;
+}
+
+
+export const getAllinfolaunches = async (id) => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {
+                "_id": id
+            },
+            "options": {
+                "select":"id cores.core cores.flight cores.gridfins cores.legs cores.reused cores.landing_attempt links.wikipedia links.article links.youtube_id name date_utc rocket success flight_number crew launchpad payloads details static_fire_date_utc static_fire_date_unix"
+            }
+        })
+    };
+
+    let res = await fetch ("https://api.spacexdata.com/v4/launches/query", config);
+    const { docs } = await res.json();
+    return docs[0];
+}
+
+
 
 
 

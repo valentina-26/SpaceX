@@ -7,6 +7,12 @@ import { skipStarlink,FillStarlink } from "./components/skipStarlink.js";
 import { skipships,Fillships } from "./components/skipShip.js";
 import { skipPayloads,FillPayloads } from "./components/skipPayloads.js";
 
+import { skipRoadster,FillRoadster } from "./components/skipRoadster.js";
+import {skipadragon,FillDragon} from "./components/skipDragon.js"
+import {skipLandingPads,FillLandingPads} from "./components/skipLandingPads.js"
+import {skipLaunches,FillLaunches} from "./components/skiplaunches.js"
+import {skipLaunchpads,FillLaunchpads} from "./components/skipLaunchpads.js"
+
 
 export const clearInformation = () => {
     document.querySelector("#title").innerHTML = "";
@@ -64,6 +70,35 @@ const handlePayloadsClick = async e => {
     FillPayloads();
 }
 
+const handleRoadsterClick = async e => {
+    clearInformation();
+    document.querySelector("#paginacion").innerHTML = await skipRoadster();
+    FillRoadster();
+}
+
+const handleDragonClick = async e => {
+    clearInformation();
+    document.querySelector("#paginacion").innerHTML = await skipadragon();
+    FillDragon();
+}
+
+const handlelandingppadsClick = async e => {
+    clearInformation();
+    document.querySelector("#paginacion").innerHTML = await skipLandingPads();
+    FillLandingPads();
+}
+
+const handlelaunchesClick = async e => {
+    clearInformation();
+    document.querySelector("#paginacion").innerHTML = await skipLaunches();
+    FillLaunches();
+}
+
+const handlelaunchesPadsClick = async e => {
+    clearInformation();
+    document.querySelector("#paginacion").innerHTML = await skipLaunchpads();
+    FillLaunchpads();
+}
 document.addEventListener("DOMContentLoaded", async () => {
     const rocketElement = document.querySelector("#rockets");
     const capsulesElement = document.querySelector("#capsules");
@@ -73,9 +108,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     const starlinkElement = document.querySelector("#starlink")
     const shipElement = document.querySelector("#ships")
     const PayloadsElemt = document.querySelector("#payloads")
+    const RoadsterElement = document.querySelector("#roadster")
+    const DragonElement = document.querySelector("#dragon")
+    const LandingPadsElement = document.querySelector("#LandingPads")
+    const LaunchesElement = document.querySelector("#Launches")
+    const LaunchPadsElement =document.querySelector("#LaunchPads")
 
 
-    if (rocketElement && capsulesElement && coresElement && crewElement && HistoryElemnt && starlinkElement && shipElement && PayloadsElemt) {
+    if (rocketElement && capsulesElement && coresElement && crewElement && HistoryElemnt && starlinkElement && shipElement && PayloadsElemt && RoadsterElement && DragonElement && LandingPadsElement && LaunchesElement && LaunchPadsElement) {
         rocketElement.addEventListener("click", handleRocketClick);
         capsulesElement.addEventListener("click", handleCapsulesClick);
         coresElement.addEventListener("click", handleCoresClick);
@@ -84,11 +124,16 @@ document.addEventListener("DOMContentLoaded", async () => {
         starlinkElement.addEventListener("click",handleStarlinkClick);
         shipElement.addEventListener("click",handleShipClick);
         PayloadsElemt.addEventListener("click",handlePayloadsClick);
+        RoadsterElement.addEventListener("click",handleRoadsterClick);
+        DragonElement.addEventListener("click",handleDragonClick);
+        LandingPadsElement.addEventListener("click",handlelandingppadsClick);
+        LaunchesElement.addEventListener("click",handlelaunchesClick)
+        LaunchPadsElement.addEventListener("click",handlelaunchesPadsClick)
 
         clearInformation();
         document.querySelector("#paginacion").innerHTML = await skipRockets();
         fillrockets();
     } else {
-        console.error("No se encontraron los elementos con IDs '#rockets' o '#capsules'.");
+        console.error("No se encontraron los elementos con IDs .");
     }
 });
