@@ -1,5 +1,5 @@
 import {getAlllaunchesid,getAllinfolaunches} from "../modules/data.js"
-import {titleLaunches,InfoLaunches,plusInfoRocket3I} from "./launches.js"
+import {InfoLaunches,titleLaunches,plusInfoRocket3I} from "./launches.js"
 
 export const skipLaunches = async ()  =>{
     const Cores = await getAlllaunchesid ();

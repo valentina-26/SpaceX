@@ -604,6 +604,52 @@ export const getAllinfolaunches = async (id) => {
 }
 
 
+//COMPANY
+export const getAllcompanyId = async () => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {},
+            "options": {
+                "select": "id"
+            }
+        })
+    };
+
+    const res = await fetch("https://api.spacexdata.com/v4/company/query", config);
+    const { docs } = await res.json();
+    // console.log(docs);
+    return docs;
+}
+
+
+export const getInfoCompany = async (id) => {
+    const config = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "query": {
+                "_id": id
+            },
+            "options": {
+                "select":"headquarters.address headquarters.city headquarters.state links.website links.flickr links.twitter links.elon_twitter name founder founded employees vehicles launch_sites test_sites ceo cto coo cto_propulsion valuation summary"
+            }
+        })
+    };
+
+    let res = await fetch ("https://api.spacexdata.com/v4/company/query", config);
+    const { docs } = await res.json();
+    console.log(docs[0]);
+    return docs[0];
+}
+
+
+
 
 
 

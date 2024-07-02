@@ -12,7 +12,7 @@ import {skipadragon,FillDragon} from "./components/skipDragon.js"
 import {skipLandingPads,FillLandingPads} from "./components/skipLandingPads.js"
 import {skipLaunches,FillLaunches} from "./components/skiplaunches.js"
 import {skipLaunchpads,FillLaunchpads} from "./components/skipLaunchpads.js"
-
+import { FillComapany,skipComapany } from "./components/skipCompany.js";
 
 export const clearInformation = () => {
     document.querySelector("#title").innerHTML = "";
@@ -99,6 +99,12 @@ const handlelaunchesPadsClick = async e => {
     document.querySelector("#paginacion").innerHTML = await skipLaunchpads();
     FillLaunchpads();
 }
+
+const handleCompnanyClick = async e => {
+    clearInformation();
+    document.querySelector("#paginacion").innerHTML = await skipComapany();
+    FillComapany();
+}
 document.addEventListener("DOMContentLoaded", async () => {
     const rocketElement = document.querySelector("#rockets");
     const capsulesElement = document.querySelector("#capsules");
@@ -113,9 +119,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     const LandingPadsElement = document.querySelector("#LandingPads")
     const LaunchesElement = document.querySelector("#Launches")
     const LaunchPadsElement =document.querySelector("#LaunchPads")
+    const companyElement = document.querySelector("#company")
 
 
-    if (rocketElement && capsulesElement && coresElement && crewElement && HistoryElemnt && starlinkElement && shipElement && PayloadsElemt && RoadsterElement && DragonElement && LandingPadsElement && LaunchesElement && LaunchPadsElement) {
+    if (companyElement && rocketElement && capsulesElement && coresElement && crewElement && HistoryElemnt && starlinkElement && shipElement && PayloadsElemt && RoadsterElement && DragonElement && LandingPadsElement && LaunchesElement && LaunchPadsElement) {
         rocketElement.addEventListener("click", handleRocketClick);
         capsulesElement.addEventListener("click", handleCapsulesClick);
         coresElement.addEventListener("click", handleCoresClick);
@@ -129,6 +136,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         LandingPadsElement.addEventListener("click",handlelandingppadsClick);
         LaunchesElement.addEventListener("click",handlelaunchesClick)
         LaunchPadsElement.addEventListener("click",handlelaunchesPadsClick)
+        companyElement.addEventListener("click",handleCompnanyClick)
 
         clearInformation();
         document.querySelector("#paginacion").innerHTML = await skipRockets();
