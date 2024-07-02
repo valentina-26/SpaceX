@@ -1,17 +1,29 @@
-export const Dragontitle = async(info)  =>{
-    document.querySelector("#title").innerHTML = info.name;
+export const Dragontitle = async (info) => {
+    const titleElement = document.querySelector("#title");
+    if (!titleElement) {
+        console.error("#title not found");
+        return;
+    }
+    titleElement.innerHTML = info.name;
 }
+
+
 export const DragonInfo = async (descrip) => {
-    document.querySelector("#izquerda").innerHTML = /*html*/`
+    const izquierdaElement = document.querySelector("#izquierda");
+    if (!izquierdaElement) {
+        console.error("#izquierda not found");
+        return;
+    }
+
+    izquierdaElement.innerHTML = /*html*/`
         <p>HEAT_SHIELD</p>
-                <hr>
-            <div id="informacion" class="informacion">
-                <div id="subtitulo" class="subtitulo">
+        <hr>
+        <div id="informacion" class="informacion">
+            <div id="subtitulo" class="subtitulo">
                 material
-                </div>
-                <div id = "info" class ="info">
+            </div>
+            <div id="info" class="info">
                 ${descrip.heat_shield.material}
-                </div>
             </div>
         </div>
         <p></p>
@@ -58,38 +70,44 @@ export const DragonInfo = async (descrip) => {
                 </div>
             </div>
         </div>
-        <div class="gauge__body">
+        <div class="gauge__bodyDragon">
             <div class="gauge__fill"></div>
             <div class="gauge__cover">
-                <div class="gauge__text">launch_payload_mass</div>
-                <div class="gauge__value">${descrip.launch_payload_mass.kg}KG</div>
+                <div class="gauge__textDragon">launch_payload_mass</div>
+                <div class="gauge__valueDragon">${descrip.launch_payload_mass.kg}KG</div>
             </div>
         </div> 
-        <div class="gauge__body">
+        <div class="gauge__bodyDragon">
             <div class="gauge__fill"></div>
             <div class="gauge__cover">
-                <div class="gauge__text">launch_payload_mass</div>
-                <div class="gauge__value">${descrip.launch_payload_mass.lb}LB</div>
+                <div class="gauge__textDragon">launch_payload_mass</div>
+                <div class="gauge__valueDragon">${descrip.launch_payload_mass.lb}LB</div>
             </div>
         </div> 
-        <div class="gauge__body">
+        <div class="gauge__bodyDragon">
             <div class="gauge__fill"></div>
             <div class="gauge__cover">
-                <div class="gauge__text">cubic_meters</div>
-                <div class="gauge__value">${descrip.trunk.trunk_volume.cubic_meters}MTRS</div>
+                <div class="gauge__textDragon">cubic_meters</div>
+                <div class="gauge__valueDragon">${descrip.trunk.trunk_volume.cubic_meters}MTRS</div>
             </div>
         </div>
-        `;
-        document.querySelector("#derecha").innerHTML = /*html*/`
+    `;
+
+    const derechaElement = document.querySelector("#derecha");
+    if (!derechaElement) {
+        console.error("#derecha not found");
+        return;
+    }
+
+    derechaElement.innerHTML = /*html*/`
         <p>THRUSTERS</p>
-                <hr>
-            <div id="informacion" class="informacion">
-                <div id="subtitulo" class="subtitulo">
+        <hr>
+        <div id="informacion" class="informacion">
+            <div id="subtitulo" class="subtitulo">
                 Type
-                </div>
-                <div id = "info" class ="info">
+            </div>
+            <div id="info" class="info">
                 ${descrip.thrusters.type}
-                </div>
             </div>
         </div>
         <p></p>
@@ -136,47 +154,57 @@ export const DragonInfo = async (descrip) => {
                 </div>
             </div>
         </div>
-        <section id="izquierda" class="left-rocket">
+        <section id="izquierda" class="left-dragon">
             <div class="status normal">🧐 DESCRIPTION 🧐</div>
             <div class="system-check">${descrip.description}</div>
         </section>
-        `;
-        document.querySelector("#metrics").innerHTML = /*html*/`
-        <div class="metric">
-            <div class="metric-title">wikipedia</div> 
-            <div class="metric-value"> ${descrip.wikipedia}</div>
-        </div>
+    `;
+
+    const metricsElement = document.querySelector("#metrics");
+    if (!metricsElement) {
+        console.error("#metrics not found");
+        return;
+    }
+
+    metricsElement.innerHTML = /*html*/`
+      
         <div class="metric">
             <div class="metric-title">active</div> 
             <div class="metric-value">${descrip.active}</div>
         </div>
         <div class="metric">
+            <div class="metric-title">wikipedia</div>
+            <div class="metric-value">
+                <a href="${descrip.wikipedia}" target="_blank">${descrip.wikipedia}</a>
+            </div>
+        </div>
+        <div class="metric">
             <div class="metric-title">type</div> 
             <div class="metric-value">${descrip.type}</div>
         </div>
-        `;
+
+    `;
 }
 
-
 export const plusInfoRocket3I = async (plusInfo) => {
-    // console.log(plusInfo.flickr_images)
     const img = async () => {
         let plantilla = '';
-        let imagenes = plusInfo.flickr_images;
-
-        imagenes.forEach(element => {
-        
-            plantilla +=/*html*/ `
-            <div class="carousel">
-                <img src="${element}" referrerpolicy="no-referrer">
-            </div> 
+        plusInfo.flickr_images.forEach((element, index) => {
+            plantilla += /*html*/`
+                <div class="carousel">
+                    <img src="${element}" referrerpolicy="no-referrer" alt="Roadster Image ${index + 1}">
+                </div>
             `;
-        
         });
         return plantilla;
     }
 
-    // console.log(await img());
+    const imagenElement = document.querySelector("#imagen");
+    if (!imagenElement) {
+        console.error("#imagen not found");
+        return;
+    }
 
-    document.querySelector("#imagen").innerHTML = await img();
-};
+    imagenElement.innerHTML = await img();
+}
+

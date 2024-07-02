@@ -800,3 +800,39 @@ main {
 }
 
 
+
+.gauge__bodyDragon {
+    width: 45%;
+    height: 15%;
+    border-radius: 50%;
+    background: conic-gradient(#00aaff 0%, #00aaff 60%, #0a0e27 60%, #0a0e27 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 20px;
+    padding: 25px;
+}
+
+.gauge__textDragon {
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+    color: #dd2525;
+}
+
+.gauge__valueDragon {
+    font-size: 0.7em;
+}
+
+.left-dragon{
+    width: 90%;
+    background-color: #1a1c3a6e;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    border-style: groove;
+    margin-top: 35px;
+}
+
+
+
