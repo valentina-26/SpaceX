@@ -761,3 +761,41 @@ main {
     margin-top: 28px;
 }
 
+.gauge__bodylanding {
+    width: 70%;
+    height: 30%;
+    border-radius: 50%;
+    background: conic-gradient(#00aaff 0%, #00aaff 60%, #0a0e27 60%, #0a0e27 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 35px;
+};
+
+.left-rocket{
+    width: 90%;
+    background-color: #1a1c3a6e;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    border-style: groove;
+}
+
+.elonlanding {
+    width: 350px;
+    height: 30vh;
+    margin-left: 30%;
+    margin-bottom: 20px;
+}
+
+.elonlanding img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
+    border-radius: 30%;
+    border-style: groove;
+    margin-top: 65px;
+}
+
+

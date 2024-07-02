@@ -1,7 +1,7 @@
 import {getAllLandingPadsid,getAllinfoLandingPads} from"../modules/data.js"
 import {landingTitle,infolanding} from "./LandingPads.js"
 
- export const skipLandingPads = async () => {
+export const skipLandingPads = async () => {
     const capsules = await getAllLandingPadsid();
     const html = capsules.map((LandingPads, index) => {
         const pag = index + 1;

@@ -1,5 +1,5 @@
 import {getAlllaunchesid,getAllinfolaunches} from "../modules/data.js"
-import {titleLaunches,InfoLaunches} from "./launches.js"
+import {titleLaunches,InfoLaunches,plusInfoRocket3I} from "./launches.js"
 
 export const skipLaunches = async ()  =>{
     const Cores = await getAlllaunchesid ();
@@ -27,4 +27,7 @@ const loadlaunches = async(id) => {
 
     const Coresinfo = await getAllinfolaunches(id);
     await InfoLaunches (Coresinfo);
+
+    const imagenes = await getAllinfolaunches(id)
+    plusInfoRocket3I (imagenes)
 };

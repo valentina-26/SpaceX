@@ -593,7 +593,7 @@ export const getAllinfolaunches = async (id) => {
                 "_id": id
             },
             "options": {
-                "select":"id cores.core cores.flight cores.gridfins cores.legs cores.reused cores.landing_attempt links.wikipedia links.article links.youtube_id name date_utc rocket success flight_number crew launchpad payloads details static_fire_date_utc static_fire_date_unix"
+                "select":"flickr.original id cores.core cores.flight cores.gridfins cores.legs cores.reused cores.landing_attempt links.wikipedia links.article links.youtube_id name date_utc rocket success flight_number crew launchpad payloads details static_fire_date_utc static_fire_date_unix"
             }
         })
     };

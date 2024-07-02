@@ -1,7 +1,7 @@
 import {getAllDragonid,getAllinfoDragon} from"../modules/data.js"
-import {Dragontitle,DragonInfo} from "./Dragon.js"
+import {Dragontitle,DragonInfo,plusInfoRocket3I} from "./Dragon.js"
 
- export const skipadragon = async () => {
+export const skipadragon = async () => {
     const capsules = await getAllDragonid();
     const html = capsules.map((dragon, index) => {
         const pag = index + 1;
@@ -28,4 +28,8 @@ import {Dragontitle,DragonInfo} from "./Dragon.js"
 
         const info = await getAllinfoDragon(id);
         await DragonInfo (info);
+
+        const imagenes = await getAllinfoDragon(id)
+        // console.log(imagenes)
+        plusInfoRocket3I (imagenes)
     };
