@@ -13,7 +13,6 @@ body {
 
 
 
-
 main {
     position: fixed; 
     left: 35; 
@@ -21,6 +20,24 @@ main {
     height: 100%;
     overflow: auto; 
   }
+
+  .welcome-message {
+    background-color: #16172c;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    border-style: groove;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
 
 
 .title{
@@ -293,7 +310,7 @@ main {
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
     margin-left: 180px;
-    
+
 }
 
 
@@ -910,4 +927,5 @@ main {
     object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
     border-radius: 30%;
     border-style: groove;
-}
+   }
+

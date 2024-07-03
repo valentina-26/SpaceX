@@ -14,19 +14,37 @@ import { skipLaunchpads, FillLaunchpads } from "./components/skipLaunchpads.js";
 import { skipLaunches, FillLaunches } from "./components/skiplaunches.js";
 import { FillComapany, skipComapany } from "./components/skipCompany.js";
 
-// Función para limpiar la información actual
+const mostrarMensajeInicial = () => {
+    const mensajeInicial = document.querySelector("#mensajeInicial");
+    mensajeInicial.style.display = "block"; // Mostrar el mensaje
+
+    setTimeout(() => {
+        mensajeInicial.style.display = "none"; 
+    }, 5000); 
+}
+
+
+window.addEventListener("load", () => {
+    mostrarMensajeInicial(); 
+});
+
+
+
+
+
+
+
 const clearInformation = () => {
     document.querySelector("#paginacion").innerHTML = "";
 }
 
-// Funciones para manejar el clic en cada imagen
+
 const handleClick = async (skipFunction, fillFunction) => {
-    clearInformation(); // Limpiar la información actual
-    document.querySelector("#paginacion").innerHTML = await skipFunction(); // Cargar nueva información
-    fillFunction(); // Llenar la información específica si es necesario
+    clearInformation(); 
+    document.querySelector("#paginacion").innerHTML = await skipFunction(); 
+    fillFunction(); 
 }
 
-// Configuración de los manejadores de clics para cada imagen
 document.addEventListener("DOMContentLoaded", () => {
     const rocketElement = document.querySelector("#rockets");
     const capsulesElement = document.querySelector("#capsules");
@@ -59,9 +77,10 @@ document.addEventListener("DOMContentLoaded", () => {
         launchPadsElement.addEventListener("click", () => handleClick(skipLaunchpads, FillLaunchpads));
         companyElement.addEventListener("click", () => handleClick(skipComapany, FillComapany));
 
-        // Cargar la primera página de Rockets por defecto al cargar la página
         handleClick(skipRockets, fillrockets);
     } else {
         console.error("No se encontraron todos los elementos con IDs correspondientes.");
     }
+
+    
 });

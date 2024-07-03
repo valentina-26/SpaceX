@@ -1,7 +1,6 @@
 export const titleCapsules = async (info) => {
     console.log(info);
 
-    // Validación para mostrar campo vacío si info.id es "Not found"
     const id = info.id !== "Not found" ? info.id : '';
 
     document.querySelector("#title2").innerHTML = id;
@@ -9,7 +8,7 @@ export const titleCapsules = async (info) => {
 };
 
 export const InfoCapsules = async (descrip) => {
-    // Validación para mostrar campo vacío si descrip.status es "Not found"
+ 
     const status = descrip.status !== "Not found" ? descrip.status : '';
 
     document.querySelector("#izquierda").innerHTML = /*html*/`

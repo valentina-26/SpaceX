@@ -4,8 +4,6 @@ export const Dragontitle = async (info) => {
         console.error("#title not found");
         return;
     }
-
-    // Validación para mostrar "data en actualizacion" si info.name es null o undefined
     const name = info.name ?? 'data en actualizacion';
     titleElement.innerHTML = name;
 }
@@ -17,7 +15,6 @@ export const DragonInfo = async (descrip) => {
         return;
     }
 
-    // Validación para mostrar "data en actualizacion" si alguno de los campos es null o undefined
     const heatShieldMaterial = descrip.heat_shield.material ?? 'data en actualizacion';
     const heatShieldSize = descrip.heat_shield.size_meters ?? 'data en actualizacion';
     const heatShieldTemp = descrip.heat_shield.temp_degrees ?? 'data en actualizacion';

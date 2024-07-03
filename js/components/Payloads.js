@@ -1,16 +1,16 @@
 export const payloadsTitle = async (info) => {
-    // Validación para asegurar que info.name no sea null o undefined
+  
     const name = info.name !== null && info.name !== undefined ? info.name : 'data en actualizacion';
     document.querySelector("#title").innerHTML = name;
 }
 
 export const infoPayloads = async (descrip) => {
-    // Función para verificar y reemplazar valores nulos o indefinidos
+   
     const checkNullOrUndefined = (value) => {
         return value !== null && value !== undefined ? value : 'data en actualizacion';
     };
 
-    // Aplicar la validación a cada propiedad de descrip
+  
     descrip.type = checkNullOrUndefined(descrip.type);
     descrip.reused = checkNullOrUndefined(descrip.reused);
     descrip.customers = checkNullOrUndefined(descrip.customers);
@@ -26,7 +26,7 @@ export const infoPayloads = async (descrip) => {
     descrip.reference_system = checkNullOrUndefined(descrip.reference_system);
     descrip.regime = checkNullOrUndefined(descrip.regime);
 
-    // Actualizar el HTML con los datos validados
+ 
     document.querySelector("#metrics").innerHTML = /*html*/`
         <div class="metric">
             <div class="metric-title">type</div> 
