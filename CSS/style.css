@@ -892,3 +892,18 @@ main {
     width: 0;  /* Oculta la barra de desplazamiento */
 }
 
+.eloncolor {
+    width: 350px;
+    height: 43vh;
+    margin-left: 30%;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.eloncolor img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
+    border-radius: 30%;
+    border-style: groove;
+}

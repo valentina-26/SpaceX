@@ -2,29 +2,27 @@ import {getInfoCompany} from"../modules/data.js"
 import {CompanyTitle,infoCompany} from "./company.js"
 
 export const skipComapany = async () => {
-    const capsules = 1;
-    const html = capsules.map((company, index) => {
-        const pag = index + 1;
-        return `<a href="#${pag}" data-id="${company.id}">${pag}</a>`;
-    });
-
-    return html.join("");
+    return `<a href="#" data-id="5eb75edc42fea42237d7f3ed">1</a>`; 
 };
 
-    export const FillComapany = async() => {
-        document.querySelector("#paginacion").addEventListener("click", async e => {
-            e.preventDefault();
-            const id = e.target.dataset.id;
-            await loadCompany(id);
-        });
-        const firstCapsuleId = document.querySelector("#paginacion").querySelector("a").dataset.id;
-        loadCompany(firstCapsuleId);
+export const FillComapany = async () => {
+    try {
+        await loadRoadsterData("5eb75edc42fea42237d7f3ed");
+    } catch (error) {
+        console.error("Error initializing Roadster fill:", error);
     }
+};
 
-    const loadCompany = async(id) => {
+const loadRoadsterData = async id => {
+    try {
         const title = await getInfoCompany(id);
-        await CompanyTitle (title);
+        await CompanyTitle(title);
 
-        const History = await getInfoCompany(id);
-        await infoCompany (History);
-    };
+        const roadsterInfo = await getInfoCompany(id);
+        await infoCompany(roadsterInfo);
+
+
+    } catch (error) {
+        console.error("Error loading Roadster data:", error);
+    }
+};

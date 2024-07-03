@@ -21,6 +21,9 @@ export const infoCompany = async (descrip) =>{
         <div class="metric-title">vehicles</div> 
         <div class="metric-value"> ${descrip.vehicles}</div>
     </div>
+    <div class="eloncolor">
+        <img src="storage/img/spacex.jpg">  
+    </div>
     `;
     document.querySelector("#derecha").innerHTML = /*html*/`
         <div id ="circuoone"class="gaugestar"> 
