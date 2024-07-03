@@ -835,4 +835,29 @@ main {
 }
 
 
+.left-lan{
+    width: 90%;
+    background-color: #1a1c3a6e;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    border-style: groove;
+    margin-top: 35px;
+}
+
+.Crewlan{
+    width: 500px;
+    height: 33vh;
+    margin-left: 65px;
+
+}.Crewlan img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
+    border-radius: 30%;
+    border-style: groove;
+    margin-top: 5%;
+    margin-left: 125px;
+}
+
 
