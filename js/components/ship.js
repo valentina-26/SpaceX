@@ -68,7 +68,7 @@ export const Infoships = (descrip) => {
     document.querySelector("#izquierda").innerHTML = /*html*/`
         <section id="izquierda" class="left-rocket">
             <div class="status normal">link</div>
-            <div class="system-check">${descrip.link}</div>
+            <div class="system-check"><a href="${descrip.link}">${descrip.link}</a></div>
         </section>
         <section id="izquierda" class="left-circle">
         <div class="status normal"> active</div>

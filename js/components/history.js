@@ -10,7 +10,7 @@ export const infoHistory = async(descrip) => {
         </section>
         <section id="izquierda" class="left-circleHistory">
         <div class="status normal"> ARTICLE</div>
-        <div class="left-circle-titlt">${descrip.links.article}</div></div>
+        <div class="left-circle-titlt"><div class="left-circle-titlt"><a href="${descrip.links.article}">Enlace al artículo</a></div></div>
         </section>
         <div class="historico">
         <img src="storage/img/history.gif">  
@@ -27,6 +27,5 @@ export const infoHistory = async(descrip) => {
     <div class="metric-title">event_date_unix</div> 
         <div class="metric-value"> ${descrip.event_date_unix}</div>
     </div>
-
     `;
 }

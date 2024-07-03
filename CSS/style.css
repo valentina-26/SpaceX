@@ -101,6 +101,10 @@ main {
     margin-bottom: -15%;
 }
 
+.rocket-image::-webkit-scrollbar {
+    width: 0;  /* Oculta la barra de desplazamiento */
+}
+
 .carousel {
     display: flex;
     transition: transform 0.3s ease;
@@ -208,7 +212,7 @@ main {
 .metric-value {
     font-size: 1.2em;
     margin-top: 10px;
-
+    word-wrap: break-word;
 }
 
 .rocket-image{
@@ -345,22 +349,22 @@ main {
     display: flex;
     color: #ffffff;
     border-radius: 50%;
-    width: 40px;
-    height: 4vh;
+    width: 50px;
+    height: 5vh;
     justify-content: center;
     align-items: center;
     border-style: dashed;
 }
 
-.left-rocket{
+.left-rocket {
     width: 90%;
-
     background-color: #1a1c3a6e;
     padding: 10px;
     border-radius: 20px;
     margin-bottom: 15px;
     border-style: groove;
-}
+    word-wrap: break-word; }
+
 
 .left-circle{
     width: 40%;
@@ -517,14 +521,14 @@ main {
 }
 
 .eloncolor {
-    width: 350px;
-    height: 25vh;
+    width: 250px;
+    height: 15vh;
     margin-left: 30%;
     margin-bottom: 20px;
 }
 
 .eloncolor img {
-    width: 100%;
+    width: 80%;
     height: 100%;
     object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
     border-radius: 30%;

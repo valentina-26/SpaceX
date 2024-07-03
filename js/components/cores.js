@@ -131,9 +131,7 @@ export const InfoCores = async (descrip) => {
     <div class="status normal"> LAST UPDATE</div>
     <div class="system-check">${descrip.last_update}</div>
     </section>
-    <div class="eloncolor">
-        <img src="storage/img/giphy.gif">  
-    </div>
+    
         `;
     
 };

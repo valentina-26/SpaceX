@@ -21,7 +21,7 @@ export const infoCrew = async (descrip) =>{
     </div>
     <section id="izquierda" class="left-circleCrew">
         <div class="status normal">  WIKIPEDIA</div>
-            <div class="left-circle-titlt">${descrip.wikipedia} </div></div>
+        <div class="left-circle-titlt"><a href="${descrip.wikipedia}">Enlace a Wikipedia</a></div></div>
     </section>
     <div id ="circuoone"class="gauge2"> 
     <div id ="circuoone"class="gauge__body">
