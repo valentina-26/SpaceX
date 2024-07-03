@@ -4,9 +4,11 @@ export const Dragontitle = async (info) => {
         console.error("#title not found");
         return;
     }
-    titleElement.innerHTML = info.name;
-}
 
+    // Validación para mostrar "data en actualizacion" si info.name es null o undefined
+    const name = info.name ?? 'data en actualizacion';
+    titleElement.innerHTML = name;
+}
 
 export const DragonInfo = async (descrip) => {
     const izquierdaElement = document.querySelector("#izquierda");
@@ -14,6 +16,21 @@ export const DragonInfo = async (descrip) => {
         console.error("#izquierda not found");
         return;
     }
+
+    // Validación para mostrar "data en actualizacion" si alguno de los campos es null o undefined
+    const heatShieldMaterial = descrip.heat_shield.material ?? 'data en actualizacion';
+    const heatShieldSize = descrip.heat_shield.size_meters ?? 'data en actualizacion';
+    const heatShieldTemp = descrip.heat_shield.temp_degrees ?? 'data en actualizacion';
+    const heatShieldDev = descrip.heat_shield.dev_partner ?? 'data en actualizacion';
+    const launchPayloadKg = descrip.launch_payload_mass.kg ?? 'data en actualizacion';
+    const launchPayloadLb = descrip.launch_payload_mass.lb ?? 'data en actualizacion';
+    const trunkVolume = descrip.trunk.trunk_volume.cubic_meters ?? 'data en actualizacion';
+    const thrustersType = descrip.thrusters.type ?? 'data en actualizacion';
+    const thrustersAmount = descrip.thrusters.amount ?? 'data en actualizacion';
+    const thrustersPods = descrip.thrusters.pods ?? 'data en actualizacion';
+    const thrustersFuel1 = descrip.thrusters.fuel_1 ?? 'data en actualizacion';
+    const thrustersFuel2 = descrip.thrusters.fuel_2 ?? 'data en actualizacion';
+    const description = descrip.description ?? 'data en actualizacion';
 
     izquierdaElement.innerHTML = /*html*/`
         <p>HEAT_SHIELD</p>
@@ -23,72 +40,68 @@ export const DragonInfo = async (descrip) => {
                 material
             </div>
             <div id="info" class="info">
-                ${descrip.heat_shield.material}
+                ${heatShieldMaterial}
             </div>
         </div>
         <p></p>
-                <hr>
-            <div id="informacion" class="informacion">
-                <div id="subtitulo" class="subtitulo">
+        <hr>
+        <div id="informacion" class="informacion">
+            <div id="subtitulo" class="subtitulo">
                 size_meters
-                </div>
-                <div id = "info" class ="info">
-                ${descrip.heat_shield.size_meters }
-                </div>
+            </div>
+            <div id="info" class="info">
+                ${heatShieldSize}
             </div>
         </div>
         <p></p>
-                <hr>
-            <div id="informacion" class="informacion">
-                <div id="subtitulo" class="subtitulo">
+        <hr>
+        <div id="informacion" class="informacion">
+            <div id="subtitulo" class="subtitulo">
                 temp_degrees
-                </div>
-                <div id = "info" class ="info">
-                ${descrip.heat_shield.temp_degrees}
-                </div>
+            </div>
+            <div id="info" class="info">
+                ${heatShieldTemp}
             </div>
         </div>
         <p></p>
-                <hr>
-            <div id="informacion" class="informacion">
-                <div id="subtitulo" class="subtitulo">
+        <hr>
+        <div id="informacion" class="informacion">
+            <div id="subtitulo" class="subtitulo">
                 dev_partner
-                </div>
-                <div id = "info" class ="info">
-                ${descrip.heat_shield.dev_partner}
-                </div>
+            </div>
+            <div id="info" class="info">
+                ${heatShieldDev}
             </div>
         </div>
         <p></p>
-                <hr>
-            <div id="informacion" class="informacion">
-                <div id="subtitulo" class="subtitulo">
+        <hr>
+        <div id="informacion" class="informacion">
+            <div id="subtitulo" class="subtitulo">
                 size_meters
-                </div>
-                <div id = "info" class ="info">
-                ${descrip.heat_shield.size_meters}
-                </div>
+            </div>
+            <div id="info" class="info">
+                ${heatShieldSize}
             </div>
         </div>
         <div class="gauge__bodyDragon">
             <div class="gauge__fill"></div>
             <div class="gauge__cover">
                 <div class="gauge__textDragon">launch_payload_mass</div>
-                <div class="gauge__valueDragon">${descrip.launch_payload_mass.kg}KG</div>
+                <div class="gauge__valueDragon">${launchPayloadKg}KG</div>
             </div>
         </div> 
         <div class="gauge__bodyDragon">
             <div class="gauge__fill"></div>
             <div class="gauge__cover">
                 <div class="gauge__textDragon">launch_payload_mass</div>
-                <div class="gauge__valueDragon">${descrip.launch_payload_mass.lb}LB</div>
+                <div class="gauge__valueDragon">${launchPayloadLb}LB</div>
             </div>
         </div> 
         <div class="gauge__bodyDragon">
             <div class="gauge__fill"></div>
             <div class="gauge__cover">
                 <div class="gauge__textDragon">cubic_meters</div>
-                <div class="gauge__valueDragon">${descrip.trunk.trunk_volume.cubic_meters}MTRS</div>
+                <div class="gauge__valueDragon">${trunkVolume}MTRS</div>
             </div>
         </div>
     `;
@@ -107,56 +120,52 @@ export const DragonInfo = async (descrip) => {
                 Type
             </div>
             <div id="info" class="info">
-                ${descrip.thrusters.type}
+                ${thrustersType}
             </div>
         </div>
         <p></p>
-                <hr>
-            <div id="informacion" class="informacion">
-                <div id="subtitulo" class="subtitulo">
+        <hr>
+        <div id="informacion" class="informacion">
+            <div id="subtitulo" class="subtitulo">
                 amount
-                </div>
-                <div id = "info" class ="info">
-                ${descrip.thrusters.amount}
-                </div>
+            </div>
+            <div id="info" class="info">
+                ${thrustersAmount}
             </div>
         </div>
         <p></p>
-                <hr>
-            <div id="informacion" class="informacion">
-                <div id="subtitulo" class="subtitulo">
+        <hr>
+        <div id="informacion" class="informacion">
+            <div id="subtitulo" class="subtitulo">
                 pods
-                </div>
-                <div id = "info" class ="info">
-                ${descrip.thrusters.pods}
-                </div>
+            </div>
+            <div id="info" class="info">
+                ${thrustersPods}
             </div>
         </div>
         <p></p>
-                <hr>
-            <div id="informacion" class="informacion">
-                <div id="subtitulo" class="subtitulo">
+        <hr>
+        <div id="informacion" class="informacion">
+            <div id="subtitulo" class="subtitulo">
                 fuel_1
-                </div>
-                <div id = "info" class ="info">
-                ${descrip.thrusters.fuel_1}
-                </div>
+            </div>
+            <div id="info" class="info">
+                ${thrustersFuel1}
             </div>
         </div>
         <p></p>
-                <hr>
-            <div id="informacion" class="informacion">
-                <div id="subtitulo" class="subtitulo">
+        <hr>
+        <div id="informacion" class="informacion">
+            <div id="subtitulo" class="subtitulo">
                 fuel_2
-                </div>
-                <div id = "info" class ="info">
-                ${descrip.thrusters.fuel_2}
-                </div>
+            </div>
+            <div id="info" class="info">
+                ${thrustersFuel2}
             </div>
         </div>
         <section id="izquierda" class="left-dragon">
             <div class="status normal">🧐 DESCRIPTION 🧐</div>
-            <div class="system-check">${descrip.description}</div>
+            <div class="system-check">${description}</div>
         </section>
     `;
 
@@ -167,22 +176,20 @@ export const DragonInfo = async (descrip) => {
     }
 
     metricsElement.innerHTML = /*html*/`
-      
         <div class="metric">
             <div class="metric-title">active</div> 
-            <div class="metric-value">${descrip.active}</div>
+            <div class="metric-value">${descrip.active ?? 'data en actualizacion'}</div>
         </div>
         <div class="metric">
             <div class="metric-title">wikipedia</div>
             <div class="metric-value">
-                <a href="${descrip.wikipedia}" target="_blank">${descrip.wikipedia}</a>
+                <a href="${descrip.wikipedia}" target="_blank">${descrip.wikipedia ?? 'data en actualizacion'}</a>
             </div>
         </div>
         <div class="metric">
             <div class="metric-title">type</div> 
-            <div class="metric-value">${descrip.type}</div>
+            <div class="metric-value">${descrip.type ?? 'data en actualizacion'}</div>
         </div>
-
     `;
 }
 
@@ -207,4 +214,3 @@ export const plusInfoRocket3I = async (plusInfo) => {
 
     imagenElement.innerHTML = await img();
 }
-
