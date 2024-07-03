@@ -1,7 +1,7 @@
 import {getAllDragonid,getAllinfoDragon} from"../modules/data.js"
 import {Dragontitle,DragonInfo,plusInfoRocket3I} from "./Dragon.js"
 
-export const skipadragon = async () => {
+export const skipDragon = async () => {
     const capsules = await getAllDragonid();
     const html = capsules.map((dragon, index) => {
         const pag = index + 1;
@@ -11,7 +11,7 @@ export const skipadragon = async () => {
     return html.join("");
 };
 
-    export const FillDragon = async() => {
+export const FillDragon = async() => {
         document.querySelector("#paginacion").addEventListener("click", async e => {
             e.preventDefault();
             const id = e.target.dataset.id;

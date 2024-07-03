@@ -47,9 +47,6 @@ export const infoPayloads = async (descrip) => {
         <div class="elonpay">
             <img src="storage/img/payloads.jpeg">  
         </div>
-        <div class="elonpay">
-            <img src="storage/img/payloadgif.gif">  
-        </div>
     `;
 
     document.querySelector("#derecha").innerHTML = /*html*/`
