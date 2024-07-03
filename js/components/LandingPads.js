@@ -50,7 +50,7 @@ export const infolanding = async (descrip) =>{
                 <div class="gauge__value">${descrip.landing_successes}</div>
             </div>
         </div> 
-        <section id="izquierda" class="left-rocket">
+        <section id="izquierda" class="left-rocketlanding">
         <div class="status normal">details</div>
         <div class="system-check">${descrip.details}</div>
         </section>

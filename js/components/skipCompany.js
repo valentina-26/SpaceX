@@ -1,8 +1,8 @@
-import {getAllcompanyId,getInfoCompany} from"../modules/data.js"
+import {getInfoCompany} from"../modules/data.js"
 import {CompanyTitle,infoCompany} from "./company.js"
 
- export const skipComapany = async () => {
-    const capsules = await getAllcompanyId();
+export const skipComapany = async () => {
+    const capsules = 1;
     const html = capsules.map((company, index) => {
         const pag = index + 1;
         return `<a href="#${pag}" data-id="${company.id}">${pag}</a>`;

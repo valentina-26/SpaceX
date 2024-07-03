@@ -119,39 +119,11 @@ export const InfoLaunches = async (descrip) => {
                 <a href="${descrip.wikipedia}" target="_blank">${descrip.wikipedia}</a>
             </div>
         </div>
+        <div class="launchi">
+            <img src="${descrip.links.patch.small}" referrerpolicy="no-referrer">
+        </div>
     `;
 }
-
-export const plusInfoRocket3I = async (plusInfo) => {
-    // Verificar si plusInfo está definido y tiene la estructura esperada
-    if (plusInfo && typeof plusInfo === 'object' && plusInfo.links && typeof plusInfo.links === 'object' &&
-        plusInfo.links.flickr && typeof plusInfo.links.flickr === 'object' && plusInfo.links.flickr.original) {
-        
-        const img = async () => {
-            let plantilla = '';
-            let imagenes = plusInfo.links.flickr.original;
-
-            imagenes.forEach(element => {
-                plantilla += /*html*/ `
-                    <div class="carousel">
-                        <img src="${element}" referrerpolicy="no-referrer">
-                    </div>
-                `;
-            });
-            return plantilla;
-        }
-
-        const imagenElement = document.querySelector("#imagen");
-        if (!imagenElement) {
-            console.error("#imagen not found");
-            return;
-        }
-
-        imagenElement.innerHTML = await img();
-    } else {
-        console.error("Flickr images not found or undefined");
-    }
-};
 
 
 

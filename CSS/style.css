@@ -16,7 +16,6 @@ body {
 
 main {
     position: fixed; 
-    top: 10; 
     left: 35; 
     width: 100%;
     height: 100%;
@@ -32,6 +31,7 @@ main {
     display: flex;
     width: 90%;
     height: 90%;
+    overflow: hidden;
 }
 
 .left-panel, .center-panel, .right-panel {
@@ -334,10 +334,8 @@ main {
     z-index: 10;
     position: fixed;
     bottom: 65px;
-    right: 50px;
-    background-color: #16172c85;
+    right: 0px;
     padding: 20px;
-    border-style:groove;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -346,6 +344,12 @@ main {
 .informationbuttom a {
     display: flex;
     color: #ffffff;
+    border-radius: 50%;
+    width: 40px;
+    height: 4vh;
+    justify-content: center;
+    align-items: center;
+    border-style: dashed;
 }
 
 .left-rocket{
@@ -443,8 +447,8 @@ main {
 }
 
 .originGif {
-    width: 450px;
-    height: 30vh;
+    width: 400px;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -567,8 +571,6 @@ main {
     border-style: groove;
     margin-bottom: 30px;
     margin-left: 43%;
- 
-
 }
 
 .left-circleCrew2{
@@ -578,8 +580,8 @@ main {
     padding: 20px;
     border-radius: 50px;
     border-style: groove;
-    margin-bottom: 25px;
     margin-left: 43%;
+    margin-top: -75px
 };
 
 
@@ -686,7 +688,7 @@ main {
     object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
     border-radius: 30%;
     border-style: groove;
-    margin-top: 50px;
+    margin-top: 15px;
 }
 
 .gaugestar {
@@ -702,8 +704,8 @@ main {
 }
 
 .shipimg{
-    width: 600px;
-    height: 40vh;
+    width: 500px;
+    height: 30vh;
     margin-left: 165px;
 
 }.shipimg img {
@@ -802,8 +804,8 @@ main {
 
 
 .gauge__bodyDragon {
-    width: 45%;
-    height: 15%;
+    width: 40%;
+    height: 10%;
     border-radius: 50%;
     background: conic-gradient(#00aaff 0%, #00aaff 60%, #0a0e27 60%, #0a0e27 100%);
     display: flex;
@@ -846,12 +848,12 @@ main {
 }
 
 .Crewlan{
-    width: 500px;
+    width: 600px;
     height: 33vh;
     margin-left: 65px;
 
 }.Crewlan img {
-    width: 100%;
+    width: 60%;
     height: 100%;
     object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
     border-radius: 30%;
@@ -860,4 +862,33 @@ main {
     margin-left: 125px;
 }
 
+.launchi{
+    width: 550px;
+    height: 40vh;
+    margin-left: 25%;
+}
+
+.launchi img {
+    width: 60%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
+    border-radius: 30%;
+    margin-top: 95px;
+}
+
+
+.left-rocketlanding {
+    width: 90%;
+    height: 40vh;
+    background-color: #1a1c3a6e;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    border-style: groove;
+    overflow-y: scroll;
+}
+
+.left-rocketlanding::-webkit-scrollbar {
+    width: 0;  /* Oculta la barra de desplazamiento */
+}
 

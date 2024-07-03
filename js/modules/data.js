@@ -652,7 +652,7 @@ export const getAllinfolaunches = async (id) => {
                 "_id": id
             },
             "options": {
-                "select":"flickr.original id cores.core cores.flight cores.gridfins cores.legs cores.reused cores.landing_attempt links.wikipedia links.article links.youtube_id name date_utc rocket success flight_number crew launchpad payloads details static_fire_date_utc static_fire_date_unix"
+                "select":"links.patch.small id cores.core cores.flight cores.gridfins cores.legs cores.reused cores.landing_attempt links.wikipedia links.article links.youtube_id name date_utc rocket success flight_number crew launchpad payloads details static_fire_date_utc static_fire_date_unix"
             }
         })
     };
@@ -664,47 +664,18 @@ export const getAllinfolaunches = async (id) => {
 
 
 //COMPANY
-export const getAllcompanyId = async () => {
+export const getInfoCompany = async () => {
     const config = {
-        method: 'POST',
+        method: 'GET',
         headers: {
-            "Content-Type": "application/json"
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            "query": {},
-            "options": {
-                "select": "id"
-            }
-        })
     };
 
-    const res = await fetch("https://api.spacexdata.com/v4/company/query", config);
-    const { docs } = await res.json();
-    // console.log(docs);
-    return docs;
-}
-
-
-export const getInfoCompany = async (id) => {
-    const config = {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            "query": {
-                "_id": id
-            },
-            "options": {
-                "select":"headquarters.address headquarters.city headquarters.state links.website links.flickr links.twitter links.elon_twitter name founder founded employees vehicles launch_sites test_sites ceo cto coo cto_propulsion valuation summary"
-            }
-        })
-    };
-
-    let res = await fetch ("https://api.spacexdata.com/v4/company/query", config);
-    const { docs } = await res.json();
-    console.log(docs[0]);
-    return docs[0];
+    const res = await fetch("https://api.spacexdata.com/v4/company", config);
+    const data = await res.json();
+    console.log('Company info:', data);
+    return data;
 }
 
 
