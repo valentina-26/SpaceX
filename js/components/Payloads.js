@@ -1,16 +1,16 @@
 export const payloadsTitle = async (info) => {
-  
+
     const name = info.name !== null && info.name !== undefined ? info.name : 'data en actualizacion';
     document.querySelector("#title").innerHTML = name;
 }
 
 export const infoPayloads = async (descrip) => {
-   
+
     const checkNullOrUndefined = (value) => {
         return value !== null && value !== undefined ? value : 'data en actualizacion';
     };
 
-  
+
     descrip.type = checkNullOrUndefined(descrip.type);
     descrip.reused = checkNullOrUndefined(descrip.reused);
     descrip.customers = checkNullOrUndefined(descrip.customers);
@@ -26,7 +26,7 @@ export const infoPayloads = async (descrip) => {
     descrip.reference_system = checkNullOrUndefined(descrip.reference_system);
     descrip.regime = checkNullOrUndefined(descrip.regime);
 
- 
+
     document.querySelector("#metrics").innerHTML = /*html*/`
         <div class="metric">
             <div class="metric-title">type</div> 

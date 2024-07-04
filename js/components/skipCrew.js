@@ -1,7 +1,7 @@
 import {getAllCrewid,getAllinfoCrew} from"../modules/data.js"
 import {titleCrew,infoCrew} from "./Crew.js"
 
- export const skipCrew = async () => {
+export const skipCrew = async () => {
     const capsules = await getAllCrewid();
     const html = capsules.map((crew, index) => {
         const pag = index + 1;

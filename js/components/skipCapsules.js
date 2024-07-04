@@ -1,7 +1,7 @@
 import {getAllCapsulesId,getInfoCapsules} from"../modules/data.js"
 import {InfoCapsules,titleCapsules} from "./capsules.js"
 
- export const skipCapsules = async () => {
+export const skipCapsules = async () => {
     const capsules = await getAllCapsulesId();
     const html = capsules.map((capsules, index) => {
         const pag = index + 1;

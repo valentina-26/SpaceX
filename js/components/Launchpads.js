@@ -4,7 +4,7 @@ export const titleLaunch = async(info)  =>{
 
 export const InfoLaunch = async (descrip) => {
     document.querySelector("#metrics").innerHTML = /*html*/`
-       
+
         <div class="metric">
             <div class="metric-title">locality</div> 
             <div class="metric-value">${descrip.locality}</div>

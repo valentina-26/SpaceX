@@ -8,7 +8,7 @@ export const titleCapsules = async (info) => {
 };
 
 export const InfoCapsules = async (descrip) => {
- 
+
     const status = descrip.status !== "Not found" ? descrip.status : '';
 
     document.querySelector("#izquierda").innerHTML = /*html*/`

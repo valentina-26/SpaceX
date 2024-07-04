@@ -5,7 +5,6 @@ export const historyTitle = (info) => {
         return;
     }
 
-    // Validación para mostrar "data en actualizacion" si info.title es null o undefined
     const title = info.title ?? 'data en actualizacion';
     titleElement.innerHTML = title;
 }
@@ -17,7 +16,6 @@ export const infoHistory = async (descrip) => {
         return;
     }
 
-    // Validación para mostrar "data en actualizacion" si alguna propiedad es null o undefined
     const details = descrip.details ?? 'data en actualizacion';
     const articleLink = descrip.links.article ?? 'data en actualizacion';
     const eventDateUtc = descrip.event_date_utc ?? 'data en actualizacion';
